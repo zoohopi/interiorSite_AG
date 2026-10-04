@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-01",
+  "provider": "Higgsfield",
+  "model": "seedance_2_0_mini",
+  "resolution": "480p",
+  "aspect_ratio": "16:9",
+  "duration_seconds_each": 5,
+  "generate_audio": false,
+  "credits_before": 1200,
+  "estimated_credits_each": 5,
+  "jobs": [
+    {"transition": "01-to-02", "job_id": "9aca1c2c-5bf6-4fec-bfa9-5b34ba601c6a"},
+    {"transition": "02-to-03", "job_id": "3950c3dc-1829-4aee-b095-2b85fc63be5f"}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "model": "seedance_2_0_mini",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "77a480c1-4e28-43c4-87f3-8cc7f6f2f291"
+    },
+    {
+      "role": "end_image",
+      "value": "9a2ce454-ea65-46d3-ab0a-2e19994d84ed"
+    }
+  ],
+  "prompt": "One single uninterrupted 4-second photorealistic architectural ZOOM-IN shot inside the same real restaurant. The first frame must match the supplied start_image PHOTO 6: wide hall view, cooking counter and illuminated wooden menu sign on the left, wooden slat dining partitions on the right, dark upholstered banquette and white pebble trough across the foreground. The last frame must match the supplied end_image PHOTO 7: close view of that SAME wooden cooking-counter menu sign and the white illuminated Korean sign directly underneath.\n\nStart moving immediately. Smoothly zoom toward the existing cooking-counter sign in the upper-left portion of the starting image, with a small continuous leftward pan and upward tilt only as needed to center it and match the final reference perspective. The zoom is the dominant movement. Keep the camera stable, with no orbit and no large sideways move. The sign grows steadily in the frame; foreground seating, white pebbles and right-hand partitions leave the edges naturally as the view tightens. EXACT MOTION TIMING IN THE ORIGINAL 4-SECOND VIDEO: from 0.00s through 2.50s, zoom in briskly at a steady high speed, starting immediately with no slow introductory ramp. At exactly 2.50s begin a smooth, clearly visible ease-out. From 2.50s to 4.00s, continue zooming forward while progressively reducing speed, arriving gently at the exact final composition at 4.00s. The transition into deceleration must be continuous, with no speed step. Aim to complete approximately 77 percent of the framing change by 2.50s; use the remaining 1.50 seconds for the final approximately 23 percent with a smooth taper toward zero velocity. Do not reach the final framing early and hold it: maintain subtle continuous forward zoom until the very end. Apply this same timing to the small accompanying pan and tilt. Do not slow before 2.50s, and do not accelerate again during the ending. Never pause halfway or snap to the final photo.\n\nBoth references depict the same fixed physical sign and architecture. Preserve the exact number, order, spacing, wood grain and shape of the five vertical wooden menu boards, the warm lighting, the white lightbox underneath, the cooking window, wall edges, ceiling ducts and black lighting tracks. Preserve the existing Korean lettering as faithfully as possible: the five boards read 양념구이 / 소금구이 / 고추장구이 / 장어정식 / 장어탕; the lower lightbox reads 맛있게 초벌중 입니다. Do not animate, redraw or replace the letters. Do not add any text overlays.\n\nFrame-to-frame temporal and spatial continuity is essential. Every architectural edge must travel smoothly and continuously throughout all four seconds. Only the camera view changes; the room and sign remain rigid and stationary. No cuts, crossfades, image swaps, jumps, freezes, camera resets, teleportation, room rearrangement, morphing, bending walls, melting letters, stretching furniture, floating pebble trough or duplicated objects. No added people, marks, music or audio.",
+  "job_id": "91d57bdc-1b57-46ec-a385-e10aac058e3d",
+  "quoted_credits": 2,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261004_084005_91d57bdc-1b57-46ec-a385-e10aac058e3d.mp4",
+  "site_applied": true
+}

@@ -1,0 +1,24 @@
+{
+  "job_id": "628c7d30-d552-4cd7-b88d-c21c3ae68bd3",
+  "model": "seedance_2_0_mini",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "b4259de9-1ed5-4bb4-ab7e-a7a2b86b175d"
+    },
+    {
+      "role": "end_image",
+      "value": "77a480c1-4e28-43c4-87f3-8cc7f6f2f291"
+    }
+  ],
+  "prompt": "One continuous 4-second photorealistic architectural walkthrough shot inside the SAME restaurant, connecting the exact supplied start_image PHOTO 5 to the exact supplied end_image PHOTO 6. FIRST FRAME PRIORITY: begin exactly on PHOTO 5: the cream textured art wall with its curved illuminated dark inset on the left, dark wooden vertical partition slats and dining tables ahead, black-framed exterior glazing at the far right, and wooden reception cabinet in the lower right. Move smoothly toward a central-hall viewpoint while turning the camera LEFT toward the interior cooking counter, away from the exterior glazing. Use a modest continuous lateral/backward camera glide into the open hall with a gentle leftward pan, guided by the end reference perspective. Reveal the cooking counter and wooden menu sign on the LEFT and the long wood-slat dining partitions on the RIGHT. The dark upholstered banquette back with its trough of WHITE PEBBLES gradually enters the foreground through natural camera parallax. End exactly on PHOTO 6: cooking counter and lit wooden sign on left, wood-slat dining areas stretching across center and right, pebble-filled banquette back diagonally across the lower foreground, white ceiling ducts, cassette air conditioners and black lighting tracks overhead. Keep camera at consistent natural eye height and fixed lens focal length. No arbitrary 180-degree spin; rotate only as needed to match the two reference viewpoints. One physically coherent rigid restaurant throughout: do not move, fold, resize or replace the slats, art wall, ceiling, tables, chairs, banquette or counter. Pebbles stay inside the fixed trough; the sofa back is furniture, never a descending wall. Foreground and background show natural depth parallax. Smooth purposeful movement from the beginning, then a gentle ease-out approaching the final frame, no intermediate pause. The entire shot must be uninterrupted and frame-to-frame continuous: no cuts, jumps, freezes, resets, crossfades, dissolves, sudden geometric changes or morphing one photograph into another. Every frame follows naturally from the previous frame. Keep warm lighting and stable verticals. No people, annotations, added text, music or audio.",
+  "quoted_credits": 2,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261004_064634_628c7d30-d552-4cd7-b88d-c21c3ae68bd3.mp4",
+  "site_applied": false
+}

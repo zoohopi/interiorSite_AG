@@ -1,0 +1,24 @@
+{
+  "job_id": "119d173b-86df-4df2-b601-47a56e5e488b",
+  "model": "seedance_2_0_mini",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "d42d49d3-e0f7-47b3-b4ec-0c03106d30ad"
+    },
+    {
+      "role": "end_image",
+      "value": "8521e6df-4cda-4cd8-8562-1d2cd4449611"
+    }
+  ],
+  "prompt": "4-second continuous first-person architectural walkthrough. Match the supplied clean start and end photographs. Identify the REAL door by its handle: in the START image, the long BLACK VERTICAL PUSH HANDLE is near x=36% of image width and y=26% of image height, immediately LEFT of the aquarium's upper-left corner, mounted on the central dark door stile. This handle belongs to the operable glass door extending to its RIGHT. The narrower glazed panel to the LEFT is FIXED and must never open. ACTION SEQUENCE: 0.0-0.6 seconds, camera advances toward that exact black vertical push handle. 0.6-1.5 seconds, as if an unseen visitor presses the handle FORWARD, the handle and its attached right-side glass door leaf rotate together INWARD into the restaurant around the opposite vertical hinged edge. The handle must travel away from the camera with the door, never detach or slide vertically. Show a clear physical opening forming where this handled door was closed. 1.5-2.7 seconds, the camera walks through that newly opened doorway, NOT through the fixed left glazing, aquarium, frame or wall. 2.7-4.0 seconds, continue gently inside and turn left naturally to reach the exact dining-hall end photograph. Door motion begins BEFORE crossing the threshold. Fixed glazing, mullions and pillars stay rigid. No visible person, body or hands needed: convey the push through the correct inward door movement. STRUCTURAL CONTINUITY: the dark horizontal band visible THROUGH the glass in the start photograph is the top of the SAME upholstered banquette backrest beneath the warm light strip in the end photograph. The sofa backrest, light strip, pale wall panels and dark rectangular wall grid remain anchored to identical world positions and heights throughout. The pale wall must NEVER descend like a blind or shutter; no wall lowering at 0.8 seconds or at any time. Furniture does not rise, sink, deform or relocate. Camera perspective and occlusion change naturally while the architecture remains rigid. Smooth eye-level forward movement, realistic parallax, stable verticals, warm lighting. No cuts, dissolves, morphs, sliding doors, opening left fixed panel, red marks, annotations, overlays, added text or sound.",
+  "quoted_credits": 2,
+  "status": "pending",
+  "annotated_images_submitted": false,
+  "site_applied": false
+}

@@ -1,0 +1,26 @@
+{
+  "job_id": "78daf5b5-2fed-4678-b3a6-10177974c734",
+  "model": "seedance_2_5",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "b4259de9-1ed5-4bb4-ab7e-a7a2b86b175d"
+    },
+    {
+      "role": "end_image",
+      "value": "77a480c1-4e28-43c4-87f3-8cc7f6f2f291"
+    }
+  ],
+  "prompt": "A single uninterrupted 4-second photorealistic architectural camera move inside this one real restaurant. START AND END FRAME LOCK: frame zero must match the supplied start_image PHOTO 5; the final frame must match the supplied end_image PHOTO 6. Preserve the photographs' real architecture, furniture, warm lighting and materials.\n\nBegin on PHOTO 5: cream textured art wall with the narrow curved illuminated inset on the left, dark wood partition and vertical slats directly ahead, dining tables behind them, black-framed exterior glazing on the right, wooden reception cabinet lower right. Smoothly glide laterally toward the open central hall while gently turning the view left toward the indoor cooking counter. Follow a single simple continuous path at stable eye height with a fixed focal length. Use only the translation and rotation needed to reach the end reference viewpoint. Keep motion purposeful and even, then ease out smoothly during the final second.\n\nArrive on PHOTO 6: the cooking counter with glass window and wooden illuminated menu sign occupies the left; wood-slat dining partitions recede across the center and right; a dark upholstered banquette with a long trough of white pebbles runs diagonally across the lower foreground; ceiling ducts, cassette air conditioners and lighting tracks stay coherent overhead. Reveal the pebble-filled banquette gradually by real perspective and occlusion as the camera moves. The pebble trough is a fixed part of the sofa back, not a wall and not an object that rises into place.\n\nTEMPORAL AND SPATIAL CONTINUITY IS THE HIGHEST PRIORITY. Treat both images as two camera views of one fixed, rigid three-dimensional room. Only the camera moves. Keep every partition post, banquette edge, table, chair, wall, counter and ceiling fixture in a consistent world position and scale. Foreground objects show stronger parallax than the background. Visible edges must trace continuous paths from one frame to the next; objects leave and enter the frame naturally through camera movement and occlusion. Never rearrange the room to force the ending composition. No melting or bending slats, stretching walls, sliding furniture, duplicated objects, shifting ceiling, floating pebbles or changing sofa geometry.\n\nThe entire 4-second shot must be frame-to-frame continuous from the exact first frame to the final view: no cuts, image swaps, crossfades, dissolves, wipes, sudden reframing, jumps, freezes, camera resets, teleportation, speed jolts or photograph morphing. No abrupt direction reversal, zoom, lens change, artificial blur masking or inserted transition. Preserve natural exposure and straight architectural lines. Empty restaurant, no added people, captions, markings, music or audio.",
+  "mode": "omni_reference",
+  "quoted_credits": 12,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261004_081746_78daf5b5-2fed-4678-b3a6-10177974c734.mp4",
+  "skill": "scroll-world",
+  "site_applied": true
+}

@@ -1,0 +1,28 @@
+{
+  "job_id": "a796d855-256a-4369-8dfc-a183348b5293",
+  "model": "seedance_2_0_mini",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "f7840326-f0f0-4a39-9720-38df000a37c2"
+    },
+    {
+      "role": "image",
+      "value": "6bae1931-69a1-4f1d-9883-862700f1d4f1"
+    },
+    {
+      "role": "end_image",
+      "value": "b4259de9-1ed5-4bb4-ab7e-a7a2b86b175d"
+    }
+  ],
+  "prompt": "One continuous 4-second photorealistic architectural camera pan through the INSIDE of this restaurant. Three ordered reference views: start_image is PHOTO 4 LEFT HALL, the additional image is PHOTO 4-5 CENTRAL INTERIOR, end_image is PHOTO 5 RIGHT HALL. Begin exactly on PHOTO 4, rotate 180 degrees through the interior-facing half-circle, pass PHOTO 4-5 at 90 degrees, finish exactly on PHOTO 5 at 180 degrees. The center reference determines the correct rotation direction: face the INDOOR cooking/service counter and its overhead sign at 90 degrees, NOT the outdoor windows or street. From the start view, turn AWAY from the black-framed glazing on the left edge toward the cream-paneled wall, dark banquette and indoor hall. Sweep across the indoor counter, white ceiling ducts, lighting rails and wooden partitions. Continue in that same direction to the end view with the curved illuminated wall on the left and glazing at the right edge. Never rotate via the exterior-facing arc. Camera stays at one fixed indoor position and fixed eye height; only its horizontal viewing angle changes. SPEED: PHOTO 4 [5 5 5 5 5] PHOTO 4-5 [5 4 3 2 1] PHOTO 5, where 5 is maximum angular speed and 1 is minimum. 0.00-1.50 seconds: immediately maintain constant fast rotation, relative speed 5, covering the first 90 degrees. At 1.50 seconds pass the central counter reference at full speed, NO slowing or dwelling at the center. 1.50-4.00 seconds: continuously and smoothly ease out from relative speed 5 through 4, 3, 2 to 1 over the remaining 90 degrees. Reach the final photo only at the end, with gentle slow arrival. Speed numbers describe a smooth curve, not stepped or jerky motion. No start hold, no midpoint hold, no speed dip before the center, no reversal. Preserve a single rigid room throughout: walls, furniture, counter, sofa, ceiling and lights remain fixed. Preserve reference composition and warm lighting. No dolly, zoom, tilt, cuts, crossfades, dissolves, image morphing, teleporting, moving walls or added objects. No people, captions, annotations, music or audio.",
+  "quoted_credits": 2,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261003_050404_a796d855-256a-4369-8dfc-a183348b5293.mp4",
+  "site_applied": false
+}

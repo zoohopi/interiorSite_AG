@@ -1,0 +1,29 @@
+{
+  "job_id": "c225fb4d-fcbd-42fa-a4d1-c556142ba4b4",
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "f7840326-f0f0-4a39-9720-38df000a37c2"
+    },
+    {
+      "role": "image",
+      "value": "6bae1931-69a1-4f1d-9883-862700f1d4f1"
+    },
+    {
+      "role": "end_image",
+      "value": "b4259de9-1ed5-4bb4-ab7e-a7a2b86b175d"
+    }
+  ],
+  "prompt": "4-second SINGLE CONTINUOUS 180-DEGREE RIGHTWARD CAMERA PAN from the exact supplied start_image to the exact supplied end_image.\n\nABSOLUTE FIRST-FRAME PRIORITY: at time 0.00 the image MUST match start_image, PHOTO 4 LEFT HALL: full-height black-framed glazing on the LEFT, a cream rectangular wall grid with a warm horizontal light strip and dark upholstered banquette directly AHEAD, dining tables and chairs below. Do not begin looking at the cooking counter or the center reference. The center reference is ONLY the halfway view, never the opening frame.\n\nThe camera remains at ONE FIXED POSITION and fixed eye height, like a tripod rotating clockwise about its vertical axis. Rotate its viewing direction a total of 180 degrees to the RIGHT.\n\nSPEED PROFILE: Treat 5 as the maximum rotation speed and 1 as the minimum. Follow this pattern:\nPHOTO 4 (start) — 5 5 5 5 5 — PHOTO 4-5 (center) — 5 4 3 2 1 — PHOTO 5 (end).\n\nFrom the start frame to the center reference, rotate continuously at maximum speed 5. Pass the center reference at full speed without pausing or slowing down. Only after passing the center, gradually and smoothly reduce the speed from 5 through 4, 3 and 2 to 1, arriving gently at the final frame. These numbers describe one smooth speed curve, not five abrupt speed changes.\n\nTIMELINE: 0.00s = yaw 0 degrees, exact PHOTO 4 left-hall start. From 0.00s to 1.50s, maintain a constant fast rotation of approximately 60 degrees per second. At 1.50s = yaw 90 degrees, match the additional CENTRAL reference PHOTO 4-5 with the foreground table/banquette, cooking counter straight ahead, exposed ducts overhead and wood partitions on the right; pass this view at full speed without holding on it. From 1.50s to 4.00s, smoothly ease out from approximately 60 to 12 degrees per second while covering the remaining 90 degrees. At 4.00s = yaw 180 degrees, match the exact PHOTO 5 right-hall end_image with the curved illuminated textured wall on the LEFT, vertical wooden slats and dining area AHEAD and exterior glazing on the RIGHT.\n\nContinue the same rightward rotation through the center without stopping or reversing. These are three compass directions from the same camera station in ONE restaurant, not separate scenes. Preserve rigid walls, ceiling ducts, wood slats, furniture, proportions and lighting throughout. During the rightward pan, static room features naturally travel LEFT across the image.\n\nFixed lens focal length, no camera translation, no dolly, no zoom, no orbit around furniture, no cuts, no dissolves, no image morphs, no jumps, no replacement of the start photo with the middle photo. No added people, text overlays, marks or audio.\n\nThe entire 4-second camera rotation must remain one uninterrupted, frame-to-frame continuous shot. Every frame must flow naturally from the previous frame, with no visible break, jump, freeze, reset, or sudden change in the room’s geometry. The start, center, and end references are viewpoints along the same continuous movement, not separate images to switch between.",
+  "quoted_credits": 12,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261003_153157_c225fb4d-fcbd-42fa-a4d1-c556142ba4b4.mp4",
+  "site_applied": true
+}

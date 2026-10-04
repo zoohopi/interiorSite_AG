@@ -1,0 +1,28 @@
+{
+  "job_id": "c11970fa-7194-4c9d-8789-b139e119146c",
+  "model": "seedance_2_0_mini",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "f7840326-f0f0-4a39-9720-38df000a37c2"
+    },
+    {
+      "role": "end_image",
+      "value": "b4259de9-1ed5-4bb4-ab7e-a7a2b86b175d"
+    },
+    {
+      "role": "image",
+      "value": "6bae1931-69a1-4f1d-9883-862700f1d4f1"
+    }
+  ],
+  "prompt": "4-second SINGLE CONTINUOUS 180-DEGREE RIGHTWARD CAMERA PAN from the exact supplied start_image to the exact supplied end_image. ABSOLUTE FIRST-FRAME PRIORITY: at time 0.00 the image MUST match start_image, PHOTO 4 LEFT HALL: full-height black-framed glazing on the LEFT, a cream rectangular wall grid with a warm horizontal light strip and dark upholstered banquette directly AHEAD, dining tables and chairs below. Do not begin looking at the cooking counter or the center reference. The center reference is ONLY the halfway view, never the opening frame. The camera remains at ONE FIXED POSITION and fixed eye height, like a tripod rotating clockwise about its vertical axis. Rotate its viewing direction a total of 180 degrees to the RIGHT, approximately 45 degrees each second. TIMELINE: 0.00s = yaw 0 degrees, exact PHOTO 4 left-hall start; 1.00s = yaw 45 degrees, continuous intermediate view; 2.00s = yaw 90 degrees, match the additional CENTRAL reference PHOTO 4-5 with the foreground table/banquette, cooking counter straight ahead, exposed ducts overhead and wood partitions on the right; 3.00s = yaw 135 degrees, continuous intermediate view; 4.00s = yaw 180 degrees, exact PHOTO 5 right-hall end_image with the curved illuminated textured wall on the LEFT, vertical wooden slats and dining area AHEAD and exterior glazing on the RIGHT. Continue the same rightward rotation through the center without stopping or reversing. These are three compass directions from the same camera station in ONE restaurant, not separate scenes. Preserve rigid walls, ceiling ducts, wood slats, furniture, proportions and lighting throughout. During the rightward pan, static room features naturally travel LEFT across the image. Fixed lens focal length, no camera translation, no dolly, no zoom, no orbit around furniture, no cuts, no dissolves, no image morphs, no jumps, no replacement of the start photo with the middle photo. No added people, text overlays, marks or audio.",
+  "quoted_credits": 2,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261002_015009_c11970fa-7194-4c9d-8789-b139e119146c.mp4",
+  "site_applied": false
+}

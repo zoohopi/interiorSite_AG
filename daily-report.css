@@ -1,0 +1,38 @@
+.report{display:block;max-width:1100px;text-align:center}
+.report-copy{max-width:720px;margin:auto}
+.report-details{padding-top:24px}
+.report .checks{text-align:left;max-width:510px;margin:25px auto}
+.report>.report-copy:first-child h3{margin-bottom:0}
+.report-scroll{margin-top:12px}
+.report-scroll.is-animated{height:440svh}
+.report-stage{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:720px;padding:8px 0 62px}
+.is-animated .report-stage{position:sticky;top:0;height:100svh;min-height:0}
+.report-chat{width:min(380px,100%);background:#b4c7d8;color:#252b30;border:1px solid #ffffff40;border-radius:22px;box-shadow:0 28px 90px #0005;text-align:left;flex-shrink:0}
+.chat-head{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;border-bottom:1px solid #2d40561a;font-size:23px}
+.chat-head>div{flex:1;text-align:center}.chat-head>span{width:24px;text-align:center;flex-shrink:0}
+.chat-head b{display:block;font-size:15px;font-weight:600}.chat-head small{display:block;font-size:10px;margin-top:3px;color:#4f6373}
+.chat-body{padding:12px 17px;display:flex;flex-direction:column;gap:10px}
+.report .chat-date{text-align:center;font-size:10px;color:#4d6172;margin-bottom:2px}
+.chat-in{display:flex;gap:8px;align-items:flex-start}.chat-avatar{display:grid;place-items:center;width:29px;height:29px;border-radius:10px;background:#183824;color:#e3ecd9;font-family:Georgia,serif;font-size:17px;flex-shrink:0}
+.chat-messages{min-width:0}.chat-name{display:block;font-size:10px;margin-bottom:5px;color:#425465}
+.report .chat-bubble{padding:9px 12px;border-radius:3px 12px 12px;background:#fff;font-size:11px;line-height:1.7;color:#222;box-shadow:0 1px 2px #0000000a}
+.chat-out{align-self:flex-end;max-width:85%;text-align:right}.chat-out .chat-bubble{background:#fee94e;border-radius:12px 3px 12px 12px;text-align:left}
+.report-photo-slot,.report-video-slot{position:relative;width:174px;margin-top:7px}
+.report-photo-slot{aspect-ratio:1034/525}.report-video-slot{aspect-ratio:16/9}
+.report-attachment{position:absolute;inset:0;display:block;border-radius:7px;transform-origin:top left;background:#18251c;will-change:transform}
+.report-attachment img,.report-attachment video{display:block;width:100%;height:100%;object-fit:contain;border-radius:inherit}
+.report-attachment.is-expanded{z-index:5;box-shadow:0 14px 60px #0007}
+.report-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#355a44,#182b22);border:0;border-radius:inherit;color:white;cursor:pointer;font-size:20px}.report-play span{font-size:10px}.report-play[hidden]{display:none}
+.chat-compose{display:flex;gap:12px;align-items:center;background:#fafafa;border-radius:0 0 22px 22px;padding:11px 16px;color:#a3a7ab;font-size:17px}.chat-compose span:nth-child(2){flex:1;font-size:11px}
+.report-shade{position:absolute;inset:0;background:#0c140fee;opacity:0;pointer-events:none;z-index:3}
+.report .report-cue{position:absolute;bottom:40px;left:0;right:0;color:#c8d8ca;font-size:12px;z-index:6;pointer-events:none}
+.report-example{position:absolute;bottom:15px;font-size:10px;color:#8c9c90}
+@media(max-width:600px){.report-scroll{margin-inline:-12px}.report-chat{width:min(340px,100%)}.chat-head{padding:11px 16px}.chat-body{padding:10px 12px;gap:8px}.report .chat-bubble{padding:7px 10px;font-size:11px}.report .report-copy .muted{font-size:14px}.report .checks li{font-size:13px}}
+@media(max-height:740px){.is-animated .chat-body{gap:6px;padding-block:8px}.is-animated .report-photo-slot{width:142px}.is-animated .report-video-slot{width:142px}.is-animated .chat-head{padding-block:9px}.is-animated .chat-compose{padding-block:7px}.is-animated .chat-bubble{font-size:10px;padding:6px 10px}.is-animated .chat-date{display:none}}
+@media(prefers-reduced-motion:reduce){.report-attachment{will-change:auto}}
+/* 제목을 고정 무대 안에 넣어, 제목이 다 보인 상태에서 스크롤 트리거 시작 */
+.report-title{flex-shrink:0;padding:clamp(20px,4svh,48px) 0 clamp(14px,2.5svh,28px)}
+.report-title h3{margin:0}
+.report-scroll{margin-top:0}
+@media(max-height:900px){.is-animated .report-title{padding:14px 0 10px}.is-animated .report-title h3{font-size:22px}.is-animated .report-title .eyebrow{margin-bottom:6px}.is-animated .chat-body{gap:6px;padding-block:8px}.is-animated .report-photo-slot,.is-animated .report-video-slot{width:142px}.is-animated .chat-head{padding-block:9px}.is-animated .chat-compose{padding-block:7px}.is-animated .chat-bubble{font-size:10px;padding:6px 10px}.is-animated .chat-date{display:none}}
+.report .checks{text-align:center}.report .checks b{min-width:0;margin-right:12px}

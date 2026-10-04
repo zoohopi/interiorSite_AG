@@ -1,0 +1,23 @@
+{
+  "job_id": "68592f91-3954-4ccd-bff5-ec468c430f99",
+  "model": "seedance_2_0_mini",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "start_image": "../inputs/photo-02.jpg",
+  "end_image": "../inputs/photo-03.jpg",
+  "server_parameters_verified": true,
+  "credits_before": 1192.5,
+  "quoted_credits": 2,
+  "prompt_source": "../prompts/02-to-03.txt",
+  "prompt_adjustment": "Replaced Duration 5 seconds. with Duration 4 seconds. and trimmed trailing newline.",
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261001_044447_68592f91-3954-4ccd-bff5-ec468c430f99.mp4",
+  "local_output": "../outputs/02-to-03-4s.mp4",
+  "actual_duration_seconds": 4.041667,
+  "actual_dimensions": [864, 496],
+  "audio_stream_present": false,
+  "credits_after": 1190.5,
+  "actual_credit_deduction": 2,
+  "site_applied": false
+}

@@ -1,0 +1,25 @@
+{
+  "job_id": "bab81e49-402a-4c80-a0cc-a6ab015c4852",
+  "model": "seedance_2_0_mini",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "d42d49d3-e0f7-47b3-b4ec-0c03106d30ad"
+    },
+    {
+      "role": "end_image",
+      "value": "8521e6df-4cda-4cd8-8562-1d2cd4449611"
+    }
+  ],
+  "prompt": "Create one continuous photorealistic 4-second eye-level walkthrough from the provided clean exterior aquarium start frame to the provided clean interior left dining hall end frame. IMPORTANT DOOR GEOMETRY: the left glazed panel is a permanently FIXED glass panel, not an operable door. It and its black frame must stay completely stationary. The actual entrance is the adjacent glass door leaf to its RIGHT, identified by its visible handle. Open ONLY that right-hand handled door on its hinges, then move the camera through the actual opening it creates. Never open the fixed left panel or pass through fixed glass. Camera path: approach the right-hand handled doorway beside the aquarium, enter it, then gently turn left toward the dining seating and settle into the supplied end-frame composition. IMPORTANT SPATIAL CORRESPONDENCE: the dark horizontal band visible inside, behind the glazing in the START image, is the TOP EDGE OF THE SAME DARK UPHOLSTERED BANQUETTE BACKREST visible under the illuminated wall in the END image. It is NOT a doorway header, shutter or movable panel. Keep that sofa, its top edge, the warm light strip above it, the pale wall panels and their dark rectangular grid physically anchored at constant world positions and constant heights for the ENTIRE shot. The pale wall is a rigid vertical architectural wall, never a sliding or descending panel. No white surface falling down, no wall lowering at the doorway, no sofa rising or sinking, no stretching, no morphing, no furniture relocation. Only perspective and occlusion change as the camera moves; do not pin objects to screen coordinates. Preserve the same furniture arrangement, structural proportions and warm lighting. Smooth forward human-scale movement, stable verticals, natural depth parallax, no camera bobbing. Only the right handled door moves independently. No cuts, dissolves, zoom slideshow, overlays, red lines, annotation marks, labels, added text or people. Silent video.",
+  "quoted_credits": 2,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261001_093301_bab81e49-402a-4c80-a0cc-a6ab015c4852.mp4",
+  "annotated_images_submitted": false,
+  "site_applied": false
+}

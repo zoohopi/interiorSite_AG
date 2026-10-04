@@ -1,0 +1,28 @@
+{
+  "job_id": "5265b814-c67c-4975-af19-5670a11c6da0",
+  "model": "seedance_2_0_mini",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "d42d49d3-e0f7-47b3-b4ec-0c03106d30ad"
+    },
+    {
+      "role": "end_image",
+      "value": "8521e6df-4cda-4cd8-8562-1d2cd4449611"
+    }
+  ],
+  "prompt": "A single continuous photorealistic first-person architectural walkthrough inside Namsan Eel restaurant, duration 4 seconds. Begin exactly at the supplied start image: exterior aquarium in the right foreground, bamboo and open entrance to its left. Move forward along the clear walkway to the LEFT of the aquarium and pass THROUGH the open doorway into the restaurant. Gently turn the camera left as a walking visitor would, arriving at the supplied end image of the left dining hall: black window frames with bamboo outside on the left, warm backlit rectangular wall panels, dark banquette, wooden chairs and stone tables with built-in grills. Maintain convincing foreground/background parallax and continuous physical forward travel, level human-eye-height camera, stable verticals, soft natural head turn. Preserve the architecture, furniture, lighting and materials of both photos. Settle smoothly on the exact end-image composition. No cuts, no dissolves, no slideshow, no flat zoom, no morphing aquarium into furniture, no moving through glass or walls, no people, no captions or added text. Silent.",
+  "quoted_credits": 2,
+  "status": "completed",
+  "local_output": "../outputs/03-to-04-4s.mp4",
+  "actual_duration_seconds": 4.041667,
+  "actual_dimensions": [864, 496],
+  "audio_stream_present": false,
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261001_091013_5265b814-c67c-4975-af19-5670a11c6da0.mp4",
+  "site_applied": false
+}

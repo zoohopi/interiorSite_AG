@@ -1,0 +1,29 @@
+{
+  "job_id": "e39c7b61-0d2e-4a6c-8934-3c22f4545d19",
+  "model": "seedance_2_0_mini",
+  "duration": 4,
+  "resolution": "480p",
+  "generate_audio": false,
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "f7840326-f0f0-4a39-9720-38df000a37c2"
+    },
+    {
+      "role": "image",
+      "value": "6bae1931-69a1-4f1d-9883-862700f1d4f1"
+    },
+    {
+      "role": "end_image",
+      "value": "b4259de9-1ed5-4bb4-ab7e-a7a2b86b175d"
+    }
+  ],
+  "prompt": "ONE continuous 4-second photorealistic architectural shot inside the SAME restaurant hall. The supplied start_image is PHOTO 4, looking toward the LEFT side of the hall. The additional image reference is PHOTO 4-5, the CENTER-facing intermediate view, with a large dining table and dark banquette in the foreground, the cooking/service counter straight ahead, exposed white ceiling ducts and black lighting rails overhead, and wooden slatted partitions on the right. The supplied end_image is PHOTO 5, looking toward the RIGHT side of the hall, with the curved illuminated textured wall on the left, tall wood slats ahead and glazing on the right. CAMERA PATH: begin exactly in the left-facing start composition; smoothly TURN THE CAMERA TO THE RIGHT like a visitor turning their head. Around 2 seconds pass naturally through the CENTER-facing composition shown in the additional reference, then continue the SAME rightward turn and settle into the right-facing end composition at 4 seconds. Keep the center image as a spatial waypoint, not a cut or a new scene. Continuous yaw rotation, constant human eye height, smooth steady angular speed with gentle easing at beginning and end; allow only a minimal natural position adjustment needed to reconcile the photographs. All three images depict one connected rigid space. Keep wall panels, banquettes, tabletops, chair positions, wood slats, curved lit wall, exposed ducts, ceiling air conditioners, lighting rails and counter fixed in world space. Their position changes on screen only through the camera's rightward rotation and perspective. Preserve foreground/background depth and realistic parallax; existing objects leave the left edge as the next part of the room enters from the right. No jump between the left, center and right views. No dissolves, cuts, photo slides, morphing walls, moving furniture, camera teleportation, whip pan, artificial zoom, added people, annotations, titles or sound. Consistent warm lighting and straight architectural verticals.",
+  "quoted_credits": 2,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261002_013554_e39c7b61-0d2e-4a6c-8934-3c22f4545d19.mp4",
+  "local_download": false,
+  "site_applied": false
+}

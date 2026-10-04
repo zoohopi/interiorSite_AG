@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-01",
+  "accepted_submission": {
+    "transition": "01-to-02",
+    "job_id": "d8c6312c-9856-4eff-aa82-c16171f259d6",
+    "status": "completed",
+    "resolution": "480p",
+    "width": 854,
+    "height": 480,
+    "duration": 5,
+    "generate_audio": false,
+    "start_and_end_media_confirmed": true,
+    "estimated_credits": 2.5,
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261001_042527_d8c6312c-9856-4eff-aa82-c16171f259d6.mp4",
+    "downloaded": false,
+    "visual_qa": "pending: download command permission rejected"
+  },
+  "second_transition": {
+    "transition": "02-to-03",
+    "status": "not_resubmitted: execution permission rejected",
+    "estimated_credits": 2.5
+  },
+  "initial_submissions": [
+    {"job_id": "9aca1c2c-5bf6-4fec-bfa9-5b34ba601c6a", "status": "completed_but_rejected_in_QA", "reason": "CLI cmd wrapper did not transmit media and settings after the multiline prompt; unrelated scene generated", "credits": 5},
+    {"job_id": "3950c3dc-1829-4aee-b095-2b85fc63be5f", "status": "ip_detected", "result_url": null}
+  ],
+  "last_verified_balance": 1195,
+  "balance_note": "Observed after initial submissions; balance after corrected 2.5-credit job not yet verified.",
+  "cli_fix": "Invoke vendor/hf.exe directly and Trim() prompt text. This confirmed both image roles, 480p, and audio=false in stored job params.",
+  "site_applied": false
+}
