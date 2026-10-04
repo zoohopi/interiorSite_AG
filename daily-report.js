@@ -12,12 +12,11 @@
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const clamp = n => Math.max(0, Math.min(1, n));
   const smooth = n => { n = clamp(n); return n * n * (3 - 2 * n); };
-  const envelope = (p, a, b, c, d) => smooth((p-a)/(b-a)) * (1-smooth((p-c)/(d-c)));
   let queued = false, inVideo = false, active = false;
   function expand(element, amount, ratio) {
     const base = element.parentElement.getBoundingClientRect();
     const bounds = stage.getBoundingClientRect();
-    const width = Math.min(bounds.width - 16, (bounds.height - 145) * ratio, 1080);
+    const width = Math.min(bounds.width - 16, (bounds.height - 145) * ratio, 1080) * 0.7;
     const height = width / ratio;
     const x = bounds.left + (bounds.width-width)/2 - base.left;
     const y = bounds.top + (bounds.height-height)/2 - 10 - base.top;
@@ -32,13 +31,14 @@
     active = !motion.matches && innerHeight >= 580;
     track.classList.toggle('is-animated', active);
     const p = active ? clamp(-rect.top / Math.max(1,track.offsetHeight-stage.offsetHeight)) : 0;
-    const a = active ? envelope(p,.07,.22,.36,.48) : 0;
-    const b = active ? envelope(p,.50,.65,.83,.96) : 0;
+    // 구간에 들어서면 한 번에 최대 크기로 (전환 애니메이션은 CSS transition)
+    const a = active && p >= .07 && p < .42 ? 1 : 0;
+    const b = active && p >= .50 && p < .90 ? 1 : 0;
     expand(photo,a,1034/525);
     expand(film,b,(video.videoWidth/video.videoHeight)||16/9);
     shade.style.opacity = String(Math.max(a,b));
     cue.textContent = !active ? '사진을 누르면 원본을 크게 볼 수 있습니다' : a > .5 ? '오늘의 작업을 사진으로 · 클릭하면 원본 보기' : b > .5 ? '현장 영상 · 소리는 영상 컨트롤에서 켜주세요' : p > .9 ? '' : '스크롤하며 오늘의 현장을 확인하세요 ↓';
-    const shouldPlay = active && p >= .62 && p < .9 && !document.hidden;
+    const shouldPlay = active && p >= .50 && p < .9 && !document.hidden;
     if (shouldPlay !== inVideo) {
       inVideo = shouldPlay;
       if (shouldPlay) video.play().catch(() => { play.hidden = false; });
