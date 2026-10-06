@@ -1,0 +1,33 @@
+{
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "duration": 4,
+  "resolution": "1080p",
+  "bitrate_mode": "high",
+  "generate_audio": false,
+  "count": 1,
+  "aspect_ratio": "16:9",
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "77a480c1-4e28-43c4-87f3-8cc7f6f2f291"
+    },
+    {
+      "role": "end_image",
+      "value": "9a2ce454-ea65-46d3-ab0a-2e19994d84ed"
+    },
+    {
+      "role": "image",
+      "value": "8ee4fe01-e8e1-4002-a1a2-707da14d0602"
+    },
+    {
+      "role": "video",
+      "value": "91d57bdc-1b57-46ec-a385-e10aac058e3d"
+    }
+  ],
+  "prompt": "Create ONE uninterrupted 4-second photorealistic architectural ZOOM-IN shot of this exact restaurant at high photographic fidelity. INPUT PRIORITY: ORIGINAL start_image PHOTO 6 and end_image PHOTO 7 are authoritative for architecture, materials, lighting and lettering. The reference VIDEO is ONLY the guide for the established camera movement, framing progression and timing; do not copy its low-resolution artifacts, malformed letters or unstable surfaces. The additional CLOSE-UP SIGN image is a lettering and material detail reference ONLY, never an inserted scene or separate shot.\n\nFIRST AND LAST FRAME LOCK: begin exactly at PHOTO 6 wide hall view, cooking counter and illuminated wooden menu sign LEFT, wooden slat dining partitions RIGHT, dark upholstered banquette and white pebble trough in foreground. End exactly at PHOTO 7 close view of the SAME five wooden cooking-counter menu boards and white illuminated Korean sign directly below. Follow the existing video's zoom-in toward this sign, with only the small continuous leftward pan and upward tilt needed to center it and match the final perspective. Zoom is dominant; stable camera, no orbit or large sideways move. Foreground seating, pebble trough and partitions leave the edges naturally as the view tightens.\n\nEXACT TIMING: move immediately at a steady brisk zoom speed from 0.00 through 2.50 seconds, no slow introductory ramp. At 2.50 seconds begin one smooth clearly perceptible ease-out. From 2.50 to 4.00 seconds continue zooming while progressively decelerating, arriving gently at the final composition at 4.00 seconds. Complete approximately 77 percent of the framing change by 2.50 seconds; use the final 1.50 seconds for the remaining approximately 23 percent with smooth taper toward zero velocity. No abrupt speed step, no slowing before 2.50 seconds, no renewed acceleration, no premature endpoint hold, no snapping to the final photograph. Apply the same timing to accompanying pan and tilt.\n\nLETTERING IS A HIGH PRIORITY: exactly FIVE distinct vertical wooden boards, LEFT-TO-RIGHT order: 양념구이 / 소금구이 / 고추장구이 / 장어정식 / 장어탕. Each board's characters run vertically TOP-TO-BOTTOM exactly as photographed. Preserve original Korean stroke shapes, spacing, pale letter color, board dimensions, wood grain and warm bottom lighting. The white horizontal lightbox directly BELOW reads EXACTLY: 맛있게 초벌중 입니다. Preserve the final period, photographic spacing and dark lettering. These are physical sign textures fixed to rigid planes, not animated typography. The SAME characters persist across every visible frame while growing with the zoom; only perspective, scale, real occlusion and natural photographic motion blur may change. Never redraw, substitute, morph, duplicate or invent characters. Restore correct lettering from the ORIGINAL photographs and close-up rather than copying malformed draft text. Preserve the sign's exact mounting position, number of boards, shape and proportions. Do not add captions or foreground text overlays.\n\nRIGID SPACE AND ANTI-BOILING: the cooking window, walls, ceiling ducts, lighting tracks, wood slats, furniture and sign remain stationary in one coherent real room. Only the camera view changes. Stable wood grain, lettering, lighting and material textures from frame to frame. No crawling textures, flickering letters, melting strokes, stretching boards, shifting ceiling, bending walls, floating pebble trough, changing sofa geometry or duplicated objects. Fine photographic detail, original warm exposure, realistic glass reflections, restrained sharpening.\n\nFRAME CONTINUITY: every frame flows naturally from its predecessor throughout all four seconds. Start and end photos are views along one continuous movement, never separate images to switch between. No cuts, dissolves, crossfades, jumps, freezes, camera resets, teleportation, hidden transitions, sudden geometry changes or endpoint snapping. No added people, marks, annotations, music or audio. Prioritize stable original lettering and real-space continuity.",
+  "job_id": "69598e9c-9b9d-4ec2-8c14-5dffa59d750c",
+  "quoted_credits": 48,
+  "status": "pending",
+  "site_applied": false
+}

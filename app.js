@@ -3,7 +3,7 @@ const clamp = n => Math.max(0, Math.min(1, n));
 const HOLD = 1.7;
 const TRAVEL = 1.65;
 const PLAYBACK_RATE = 1.65;
-const PLAYBACK_RATES = [PLAYBACK_RATE, PLAYBACK_RATE, PLAYBACK_RATE, PLAYBACK_RATE, PLAYBACK_RATE, PLAYBACK_RATE];
+const PLAYBACK_RATES = [1.75, PLAYBACK_RATE, PLAYBACK_RATE, PLAYBACK_RATE, 1.5, 1.5];
 const TOTAL = HOLD * 7 + TRAVEL * 6;
 const stopPosition = i => i * (HOLD + TRAVEL) + HOLD * .62;
 function sample(distance) {
@@ -26,7 +26,7 @@ const scenes = [
   { label:'홀 왼쪽', title:'빛과 선으로 연출한 매장 분위기', body:'브랜드 톤을 고려해 간접등, 핀조명, 선으로 편안하고 고급스러운 매장 분위기 연출.\n첫 만족스러운 식사 경험이 지속적인 매출을 만듭니다.' },
   { label:'홀 오른쪽', title:'의미 있는 매장 포인트', body:'가볍게 지나칠 수 있는 벽면에도 이유와 의도를 담아 설계했습니다.\n브랜드의 셀링 포인트 생물 장어와 주인장의 고집을 굴곡과 거친 질감으로 해석으로 아트월 설계.' },
   { label:'홀 중앙 · 자갈', title:'주방도 하나의 콘텐츠로 설계', body:'모든 좌석에서 조리 과정이 보이도록 설계했습니다.\n깔끔한 주방과 직화로 굽는 조리사의 모습을 공개해,\n매장의 신뢰와 전문성을 전합니다.' },
-  { label:'조리대 간판', title:'기다림까지 즐겁게', body:'조리과정을 의도적으로 노출해 손님이 기다리는 동안에도 기대감과 즐거움을 유발합니다.\n또 그 모습이 프로페셔널하게 보일 수 있도록 주방 위 간판 설계로 마무리했습니다.' },
+  { label:'조리대 간판', title:'기다림까지 즐겁게', body:'조리과정을 의도적으로 노출해 손님이 기다리는 동안에도\n 기대감과 즐거움을 유발합니다. 또 그 모습이 프로페셔널하게 \n보일 수 있도록 주방 위 간판 설계로 마무리했습니다.' },
 ];
 const $ = s => document.querySelector(s);
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -52,7 +52,7 @@ const buttons = scenes.map((scene,i) => {
 let activeClip = -1;
 let frame = 0;
 const wake = () => { if(!frame) frame = requestAnimationFrame(render); };
-const clips = ['01-to-02.mp4','02-to-03-4s.mp4','03-to-04-seedance25-draft.mp4','04-to-05-seedance25-4s.mp4','05-to-06-seedance25-4s.mp4','06-to-07-seedance20-easeout-4s.mp4'].map(file => {
+const clips = ['01-to-02-seedance25-reference-1080p.mp4','02-to-03-4s-seedance25-reference-1080p.mp4','03-to-04-seedance25-reference-1080p.mp4','04-to-05-seedance25-reference-1080p-cut.mp4','05-to-06-seedance25-reference-1080p-ramp-fast.mp4','06-to-07-text-lock-2s-fade.mp4'].map(file => {
   const video = document.createElement('video');
   video.muted = true; video.playsInline = true; video.preload = 'auto'; video.setAttribute('aria-hidden','true');
   $('#media').append(video);

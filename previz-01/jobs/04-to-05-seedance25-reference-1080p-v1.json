@@ -1,0 +1,37 @@
+{
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "duration": 4,
+  "resolution": "1080p",
+  "bitrate_mode": "high",
+  "generate_audio": false,
+  "count": 1,
+  "aspect_ratio": "16:9",
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "f7840326-f0f0-4a39-9720-38df000a37c2"
+    },
+    {
+      "role": "image",
+      "value": "6bae1931-69a1-4f1d-9883-862700f1d4f1"
+    },
+    {
+      "role": "end_image",
+      "value": "b4259de9-1ed5-4bb4-ab7e-a7a2b86b175d"
+    },
+    {
+      "role": "image",
+      "value": "8ee4fe01-e8e1-4002-a1a2-707da14d0602"
+    },
+    {
+      "role": "video",
+      "value": "c225fb4d-fcbd-42fa-a4d1-c556142ba4b4"
+    }
+  ],
+  "prompt": "Create ONE uninterrupted 4-second photorealistic architectural 180-DEGREE RIGHTWARD CAMERA PAN through the INTERIOR of this exact real restaurant at high photographic fidelity. ORIGINAL photos are authoritative for geometry, materials, lighting and lettering. The supplied video is ONLY the guide for the successful camera trajectory and timing; do not reproduce its low-resolution artifacts, unstable textures or malformed letters. The additional CLOSE-UP SIGN image is a lettering and material detail reference ONLY, NOT a camera viewpoint, NOT a fourth scene, and must never replace the full-room view.\n\nABSOLUTE FIRST FRAME: time 0.00 must match PHOTO 4 LEFT HALL start_image: black-framed exterior glazing LEFT, cream rectangular wall grid and warm horizontal light strip with dark upholstered banquette AHEAD, dining tables below. Do not begin at the cooking counter or center photo. Keep ONE FIXED camera position, eye height and lens focal length. Rotate 180 degrees clockwise/rightward through the indoor dining hall and cooking-counter direction, NOT around the exterior-window side. At yaw 90 degrees use the full-room PHOTO 4-5 CENTRAL reference, cooking counter ahead, ducts overhead, foreground table and banquette, wooden partitions right. At yaw 180 degrees finish at exact PHOTO 5 RIGHT HALL end_image, curved illuminated textured wall LEFT, wood slats and dining area AHEAD, exterior glazing RIGHT. Static room features move LEFT across the frame during the rightward pan.\n\nSPEED: PHOTO 4 — 5 5 5 5 5 — PHOTO 4-5 — 5 4 3 2 1 — PHOTO 5. One smooth speed curve, not abrupt steps. 0.00-1.50s rotate at a constant fast approximately 60 degrees/second; reach yaw 90 at 1.50s and pass the center at full speed without pausing, holding or slowing beforehand. From 1.50 to 4.00s smoothly decelerate approximately 60 to 12 degrees/second over the remaining 90 degrees, arriving gently at the end at 4.00s. No reversal or intermediate stop.\n\nSIGNAGE PRIORITY: reconstruct the EXISTING cooking-counter sign from the original center photograph and supplied close-up. Exactly FIVE separate vertical wooden boards, in LEFT-TO-RIGHT order: 양념구이 / 소금구이 / 고추장구이 / 장어정식 / 장어탕. Each board's Korean characters run vertically TOP-TO-BOTTOM exactly as photographed, with preserved stroke shapes, spacing, pale color, wood grain, board shape and warm bottom lighting. The white horizontal lightbox directly BELOW reads EXACTLY: 맛있게 초벌중 입니다. Include the final period and photographic spacing. Treat lettering as fixed photographic textures attached to rigid physical sign planes. Maintain the SAME characters in every frame while visible; only scale, perspective, occlusion and natural photographic motion blur change. Never redraw, morph, replace, duplicate or invent characters. Do not add subtitles or foreground text, and do not enlarge, relocate or zoom toward the sign to force readability: preserve the established camera composition.\n\nRIGID WORLD AND ANTI-BOILING: walls, ceiling ducts, black lighting tracks, wooden slats, banquette, furniture, sign supports, fixtures and curved wall surfaces stay fixed with identical proportions and stable textures. No crawling grain, flickering lettering, rubber-like partitions, melting furniture or geometry rearrangement. Restore fine details from photographs rather than copying artifacts from the draft. Natural original warm exposure, realistic reflections and restrained sharpening.\n\nFRAME CONTINUITY: all four seconds are one uninterrupted connected shot; every frame flows from the previous one. Start, center and end are compass viewpoints in the SAME room, never images to switch between. No cuts, dissolves, crossfades, jumps, freezes, resets, hidden transitions or endpoint snapping. No camera translation, dolly, zoom, orbit around furniture, added people, annotations, marks, music or audio. Prioritize real-space coherence and stable original lettering.",
+  "job_id": "a5a126ea-5903-49ce-850d-9f5588cebc8b",
+  "quoted_credits": 48,
+  "status": "pending",
+  "site_applied": false
+}

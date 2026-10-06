@@ -1,0 +1,12 @@
+{
+  "source_job_id": "b599beb9-3a13-4ab7-b88d-004885099827",
+  "output": "../outputs/06-to-07-white-sign-letters-stable-80-1080p.mp4",
+  "reference_photo": "../inputs/photo-07.jpg",
+  "text": "맛있게 초벌중 입니다.",
+  "text_opacity": 0.8,
+  "tracking": "All 97 source frames; subpixel corner coordinates; robust overlapping 31-frame cubic trajectory smoothing",
+  "fps": 24,
+  "frames": 97,
+  "additional_generation_credits": 0,
+  "site_applied": false
+}

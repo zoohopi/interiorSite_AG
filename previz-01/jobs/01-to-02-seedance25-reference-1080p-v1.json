@@ -1,0 +1,30 @@
+{
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "duration": 5,
+  "resolution": "1080p",
+  "bitrate_mode": "high",
+  "generate_audio": false,
+  "count": 1,
+  "aspect_ratio": "16:9",
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "b172c6f0-868e-4221-bdaa-8433d193128c"
+    },
+    {
+      "role": "end_image",
+      "value": "2d786f7f-6ff1-4afa-b48b-1b0cb9fa943d"
+    },
+    {
+      "role": "video",
+      "value": "d8c6312c-9856-4eff-aa82-c16171f259d6"
+    }
+  ],
+  "prompt": "Create one uninterrupted 5-second photorealistic architectural camera shot of this exact real restaurant, reconstructed at high fidelity from the supplied ORIGINAL photographs. INPUT PRIORITY: the start_image and end_image are the authoritative sources for real architecture, objects, materials, lighting and lettering. The video reference is ONLY a guide to camera trajectory, framing progression and movement timing. Do not reproduce its distorted bamboo, malformed text, shifting textures or invented objects.\n\nFIRST AND LAST VIEWS: begin at the supplied facade start photograph viewpoint, looking across the sidewalk at the whole storefront. Follow the reference video's forward approach and gradual rightward framing toward the entrance installation. End at the supplied entrance-object end photograph viewpoint: bamboo planting on the left and center, rectangular blue-lit aquarium on the right, two warm spherical lamps and a rigid dark perforated-block base below. Adapt the references to 16:9 without stretching the architecture. Match the photographic endpoints as closely as possible.\n\nCAMERA: one stable physically plausible eye-level camera translation through one fixed three-dimensional space. Preserve the reference's overall path and pace, with a gentle smooth arrival at the final viewpoint. Nearby objects have stronger natural parallax than the background. Visibility changes only by perspective, framing and real occlusion. Straight structural edges trace continuous paths. No camera shake, sudden direction changes, artificial zoom, cuts, dissolves, morphs or endpoint snapping. Keep the existing glass doors closed and stationary. Do not create a new foreground pillar, doorway or obstacle to hide a transition.\n\nANTI-BOILING AND GEOMETRY PRIORITY: the scene is a calm still architectural photograph brought to life ONLY by camera movement. There is no wind. Every bamboo stem remains rooted at the same world position with constant thickness, node spacing and branch connections. Every visible leaf retains its shape and attachment as the camera passes. Leaves may reveal their reverse sides or become occluded naturally, but must never melt, multiply, blink, stretch, merge, detach or regenerate. Preserve coherent leaf clusters and negative spaces frame to frame. No shimmering, crawling texture, flickering foliage or rubber-like swaying. Restore plant structure from the original photographs rather than copying unstable plant motion from the source video. Preserve rigid columns, glass mullions, aquarium corners, block holes and spherical lamps, with consistent scale and stable surface texture.\n\nSIGNAGE: preserve the original signs as fixed physical textured planes, with identical lettering across every visible frame. The upper white facade sign reads 남산장어, with 민물장어 전문점 and 본점 02-2291-7778 on its right. The wooden entrance sign reads 남산장어. Use the original photographs' character shapes, stroke widths, spacing, logo and wood grain. Lettering changes apparent size and perspective only because of camera motion; never redraw, morph or replace individual characters. Preserve any smaller interior sign from the original photographs as well, without inventing text. Sign faces must remain flat and attached to their real mounting points.\n\nNatural warm evening exposure, realistic glass reflections, fine architectural and plant detail, restrained sharpening and physically plausible depth. Prioritize stable real space over decorative movement. No added people, text overlays, markings, music or audio.",
+  "job_id": "6c3e9f0e-03b3-4d77-bf17-0ed1018226f1",
+  "quoted_credits": 60,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261006_044601_6c3e9f0e-03b3-4d77-bf17-0ed1018226f1.mp4",
+  "site_applied": true
+}

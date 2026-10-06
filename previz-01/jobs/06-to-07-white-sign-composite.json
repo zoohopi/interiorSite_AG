@@ -1,0 +1,14 @@
+{
+  "source_job_id": "b599beb9-3a13-4ab7-b88d-004885099827",
+  "source_video": "../outputs/06-to-07-seedance25-text-lock-1080p.mp4",
+  "reference_photo": "../inputs/photo-07.jpg",
+  "output": "../outputs/06-to-07-white-sign-composite-1080p.mp4",
+  "method": "Per-frame white-sign quadrilateral tracking and perspective compositing from the original photograph; softened boundary and exposure matching",
+  "text": "맛있게 초벌중 입니다.",
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "frames": 97,
+  "additional_generation_credits": 0,
+  "site_applied": false
+}

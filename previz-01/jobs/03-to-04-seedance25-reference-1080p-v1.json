@@ -1,0 +1,31 @@
+{
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "duration": 4,
+  "resolution": "1080p",
+  "bitrate_mode": "high",
+  "generate_audio": false,
+  "count": 1,
+  "aspect_ratio": "16:9",
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "d42d49d3-e0f7-47b3-b4ec-0c03106d30ad"
+    },
+    {
+      "role": "end_image",
+      "value": "8521e6df-4cda-4cd8-8562-1d2cd4449611"
+    },
+    {
+      "role": "video",
+      "value": "d1d16021-d019-4a80-98b3-3a2dcfbece23"
+    }
+  ],
+  "prompt": "Create ONE uninterrupted 4-second photorealistic architectural camera shot of this exact real restaurant at high photographic fidelity. INPUT PRIORITY: the ORIGINAL start_image PHOTO 3 and end_image PHOTO 4 are authoritative for real architecture, furniture, materials, foliage, lighting and lettering. The video reference is ONLY a guide to camera trajectory, framing progression and movement timing. Preserve its overall successful camera choreography, but do not reproduce distorted foliage, malformed text, shifting surfaces or invented geometry.\n\nFIRST AND LAST VIEWS: begin at the exact PHOTO 3 entrance-aquarium viewpoint, with rectangular blue-lit aquarium, bamboo, dark perforated-block base, warm spherical lamps and existing glass entrance. Advance smoothly toward the interior. ALL glass doors and their handles stay CLOSED AND STATIONARY for the entire shot. Omit door opening entirely: the camera alone passes invisibly through the closed transparent glass without collision, breakage, ripples or portal effects. Then follow the reference path into the dining hall toward the exact PHOTO 4 left-hall view. Preserve the reference's slight camera lowering and smooth upward tilt to reveal the pale wall grid, warm horizontal light strip and ceiling. This is one continuous camera trajectory, not a cut between photographs. Adapt to 16:9 without stretching architecture.\n\nSOFA CONTINUITY IS CRITICAL: the dark horizontal band visible through the glass in PHOTO 3 is the top edge of the SAME dark upholstered banquette beneath the warm light strip in PHOTO 4. Track this SAME physical edge continuously across every intermediate frame. It must remain anchored at the same world height and position, changing screen position only through camera motion and real occlusion. Never replace, reset, snap, morph or detach it when entering the hall. Show wall and ceiling through the smooth lowering-and-tilting camera movement, never by shifting the sofa or wall. The pale wall panels, dark rectangular grid and light strip are fixed: no descending wall, shutter-like motion, resizing, bending or rearrangement. Preserve rigid ceiling ducts, glazing mullions, furniture dimensions and consistent architectural proportions.\n\nANTI-BOILING: there is no wind. Bamboo stems remain rooted in identical world positions, with constant thickness, node spacing and branch connectivity. Leaves retain their shapes and attachments; only perspective and natural occlusion change. No melting, blinking, multiplication, stretching, detached foliage or crawling textures. The aquarium remains rigid with stable rectangular corners, water level and supports. Lamps remain spherical, identical in number and fixed at their original locations. Glass reflections change naturally without becoming sliding opaque surfaces. Recover stable geometry and material detail from the original photographs, not unstable artifacts from the reference video.\n\nLETTERING: preserve all visible original signs and logos as fixed physical textured planes. Maintain the original photographic character shapes, stroke widths, spacing and materials across every visible frame. Existing lettering changes size and perspective only due to the camera; never redraw, morph, replace or invent characters. No new signage or text overlays.\n\nFRAME CONTINUITY: all four seconds are one unbroken connected shot. Every frame must flow naturally from its predecessor, without cuts, fades, dissolves, jumps, freezes, resets, endpoint snapping, hidden transitions or sudden geometry changes. The photographs are viewpoints along the same camera movement, never separate scenes to switch between. Nearby objects show stronger natural parallax than distant walls. Stable camera, original warm lighting, realistic glass and restrained sharpening. No added people, foreground obstacles, red annotations, marks, music or audio. Prioritize coherent real-space geometry and temporal texture stability over decorative movement.",
+  "job_id": "b77dc9b2-8488-49b9-a9ad-541d119f0472",
+  "quoted_credits": 48,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261006_055216_b77dc9b2-8488-49b9-a9ad-541d119f0472.mp4",
+  "local_output": "../outputs/03-to-04-seedance25-reference-1080p.mp4",
+  "site_applied": true
+}

@@ -1,0 +1,15 @@
+{
+  "source": "01-to-02-upscale-pro-1080p.mp4",
+  "output": "01-to-02-sign-restored-1080p.mp4",
+  "method": "Original facade photograph sign-plane tracking and compositing; foreground column occlusion mask",
+  "restored_signs": ["Upper white facade sign", "Wooden entrance sign"],
+  "source_photo": "asset/01 최종 사용사진/1_파사드.jpg",
+  "width": 1880,
+  "height": 1080,
+  "fps": 24,
+  "frames": 121,
+  "additional_ai_credits": 0,
+  "site_applied": false,
+  "script": "video-analysis/restore-signs.py",
+  "preview_comparison": "video-analysis/sign-comparison.jpg"
+}

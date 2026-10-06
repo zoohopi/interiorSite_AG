@@ -1,0 +1,35 @@
+{
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "duration": 4,
+  "resolution": "1080p",
+  "bitrate_mode": "high",
+  "generate_audio": false,
+  "count": 1,
+  "aspect_ratio": "16:9",
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "b4259de9-1ed5-4bb4-ab7e-a7a2b86b175d"
+    },
+    {
+      "role": "end_image",
+      "value": "77a480c1-4e28-43c4-87f3-8cc7f6f2f291"
+    },
+    {
+      "role": "image",
+      "value": "8ee4fe01-e8e1-4002-a1a2-707da14d0602"
+    },
+    {
+      "role": "video",
+      "value": "78daf5b5-2fed-4678-b3a6-10177974c734"
+    }
+  ],
+  "prompt": "Create ONE uninterrupted 4-second photorealistic architectural camera move inside this exact real restaurant, reconstructed at high photographic fidelity. INPUT PRIORITY: ORIGINAL start_image PHOTO 5 and end_image PHOTO 6 are authoritative for geometry, materials, furniture, lighting and lettering. The video reference is ONLY a guide to its established camera path, framing progression and timing; do not copy distorted geometry, unstable textures or malformed letters. The additional CLOSE-UP SIGN image is a lettering and material detail reference ONLY, never a camera viewpoint or inserted scene.\n\nFIRST AND LAST FRAME LOCK: start exactly at PHOTO 5, cream textured art wall with narrow curved illuminated inset LEFT, dark wood partitions and vertical slats AHEAD, tables behind them, black-framed exterior glazing RIGHT and wooden reception cabinet lower right. Follow the reference video's smooth lateral glide toward the open central hall and gentle leftward viewing turn toward the indoor cooking counter. Preserve its successful trajectory and overall pace, stable eye height and fixed focal length; ease out smoothly during the final second. Finish at exact PHOTO 6: glass cooking window and illuminated wooden menu sign LEFT, wood-slat dining partitions receding across center and right, dark upholstered banquette with long trough of white pebbles diagonal across lower foreground, coherent ducts, cassette air conditioners and lighting tracks overhead. Only use camera translation and rotation needed to reach this viewpoint; no zoom or lens change.\n\nSIGNAGE HIGH PRIORITY: reconstruct the SAME existing cooking-counter sign from the original photos and supplied close-up. Exactly FIVE separate wooden boards, LEFT TO RIGHT: 양념구이 / 소금구이 / 고추장구이 / 장어정식 / 장어탕. Characters run vertically TOP TO BOTTOM on each board exactly as photographed. Preserve original character stroke shapes, spacing, pale letter color, board dimensions, wood grain and warm lighting. The white horizontal lightbox directly BELOW reads EXACTLY: 맛있게 초벌중 입니다. Preserve the final period, spacing, original dark lettering and physical sign placement. Treat lettering as stable photographic textures attached to rigid physical planes. The same characters persist in every visible frame; only perspective, scale, natural occlusion and photographic motion blur may change. Never redraw, substitute, morph, duplicate or invent characters. Do not enlarge, relocate or zoom into the sign to force readability; maintain the established full-room composition. No subtitles or text overlays.\n\nREAL-SPACE CONTINUITY: both endpoint photos are views of one fixed rigid room. Only the camera moves. Every wood slat, partition post, table, chair, wall, counter, sign support, ceiling duct and fixture stays anchored to a consistent world position and scale. Architectural edges trace continuous paths. Foreground objects show stronger natural parallax than background objects. Reveal the pebble-filled banquette through perspective and real occlusion; the pebble trough is part of the sofa back, not a wall or object that rises into place. The same sofa edge remains connected across every frame. Never rearrange geometry to force the ending composition.\n\nANTI-BOILING: stable wood grain, wall texture, lettering and pebble shapes throughout. No crawling surfaces, flickering characters, shimmering materials, melting slats, bending walls, stretching furniture, floating pebbles, duplicated objects, shifting ceiling or changing sofa geometry. Restore fine detail from original photographs instead of preserving draft artifacts. Realistic original warm lighting, stable exposure, plausible reflections and restrained sharpening.\n\nAll four seconds are ONE frame-to-frame continuous shot. Start and end references are viewpoints along the same camera movement, never images to switch between. No cuts, crossfades, dissolves, wipes, jumps, freezes, resets, teleportation, sudden reframing, endpoint snapping, artificial blur masking, speed jolts or direction reversal. Empty restaurant. No added people, foreground obstacles, annotations, marks, music or audio. Prioritize original lettering, stable real-space geometry and photographic temporal consistency.",
+  "job_id": "8f611951-9d0b-4fca-8425-72baf688b4d0",
+  "quoted_credits": 48,
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3AHh0X8WTZh1dzq7BLJ91U2cK4M/hf_20261006_061956_8f611951-9d0b-4fca-8425-72baf688b4d0.mp4",
+  "local_output": "../outputs/05-to-06-seedance25-reference-1080p.mp4",
+  "site_applied": true
+}

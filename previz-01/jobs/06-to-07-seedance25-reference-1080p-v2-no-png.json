@@ -1,0 +1,30 @@
+{
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "duration": 4,
+  "resolution": "1080p",
+  "bitrate_mode": "high",
+  "generate_audio": false,
+  "count": 1,
+  "aspect_ratio": "16:9",
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "77a480c1-4e28-43c4-87f3-8cc7f6f2f291"
+    },
+    {
+      "role": "end_image",
+      "value": "9a2ce454-ea65-46d3-ab0a-2e19994d84ed"
+    },
+    {
+      "role": "video",
+      "value": "91d57bdc-1b57-46ec-a385-e10aac058e3d"
+    }
+  ],
+  "prompt": "Reconstruct the supplied ORIGINAL 4-second restaurant video at high photographic fidelity using ONLY the two supplied original endpoint photographs for real-space detail. There are exactly THREE inputs: PHOTO 6 start_image, PHOTO 7 end_image, and ONE original video reference. This is a fidelity restoration of the established shot, NOT a new camera choreography or extended movement.\n\nCAMERA PATH LOCK — HIGHEST PRIORITY: reproduce the reference video's exact framing progression, zoom amount, direction, pan, tilt, timing and final view. Do not add any movement, extra close-up, additional zoom, dolly, lateral glide, orbit, new viewpoint or extra segment. At 0.00s match PHOTO 6 wide hall view, with cooking counter and sign left, wooden partitions right and banquette/white-pebble trough foreground. At 4.00s match PHOTO 7 view of the same existing cooking-counter sign. Stop the framing progression at that exact endpoint; never zoom beyond PHOTO 7. The original video alone determines the path between endpoints; the photographs provide higher-fidelity geometry and textures, not additional camera motions. Maintain the reference's brisk zoom until 2.50s and smooth ease-out from 2.50s to 4.00s. Preserve its accompanying small pan and tilt ONLY; do not exaggerate or add them. One uninterrupted 4-second shot.\n\nPHOTO FIDELITY: use the original JPG photographs as authoritative for real architecture, sign shapes, furniture, material texture, lighting and letterforms. Correct low-resolution artifacts, boiling textures and malformed lettering from the reference video without changing its composition or movement. Rigid stationary restaurant, stable exposure, original warm lighting, realistic glass, restrained sharpening. No room rearrangement, bent walls, moving furniture, warped sign boards, duplicated objects, crawling grain or flickering textures.\n\nPRESERVE EXISTING PHYSICAL SIGN TEXT, not overlay text: exactly five vertical wooden boards, LEFT TO RIGHT: 양념구이 / 소금구이 / 고추장구이 / 장어정식 / 장어탕. Keep each board's top-to-bottom vertical character arrangement, original stroke shapes, spacing, pale color, wood grain and mounting position as in the JPGs. The white horizontal lightbox beneath reads EXACTLY: 맛있게 초벌중 입니다. Preserve the final period and photographic spacing. Lettering is a stable fixed photographic texture on the original physical sign, never animated typography. Characters remain identical across visible frames and change apparent size and perspective only with the ORIGINAL camera movement. No redrawing, substitutions, melting letters or invented text. Do not introduce an additional close-up or change the shot to show the text more prominently.\n\nTEMPORAL CONTINUITY: every frame flows naturally from its predecessor; photographs are endpoint views of the same continuous shot, not scenes to switch between. No cuts, fades, crossfades, dissolves, resets, freezes, jumps, teleportation, endpoint snapping, artificial transition masking or sudden geometry changes. No added people, captions, annotations, marks, music or audio. Improve photographic fidelity and text stability ONLY; preserve the original shot.",
+  "job_id": "b48770be-5cb8-4a32-af17-4dcf515e2716",
+  "quoted_credits": 48,
+  "status": "pending",
+  "site_applied": false,
+  "revision_reason": "User requested PNG excluded; exactly original JPG endpoints and original source video. No added camera movement."
+}

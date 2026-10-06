@@ -1,0 +1,29 @@
+{
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "duration": 4,
+  "resolution": "1080p",
+  "bitrate_mode": "high",
+  "generate_audio": false,
+  "count": 1,
+  "aspect_ratio": "16:9",
+  "medias": [
+    {
+      "role": "start_image",
+      "value": "2d786f7f-6ff1-4afa-b48b-1b0cb9fa943d"
+    },
+    {
+      "role": "end_image",
+      "value": "d42d49d3-e0f7-47b3-b4ec-0c03106d30ad"
+    },
+    {
+      "role": "video",
+      "value": "68592f91-3954-4ccd-bff5-ec468c430f99"
+    }
+  ],
+  "prompt": "Create ONE uninterrupted 4-second photorealistic architectural camera shot of this exact real restaurant entrance installation at high photographic fidelity. INPUT PRIORITY: the ORIGINAL start_image and end_image are authoritative for architecture, objects, materials, lighting, foliage and existing lettering. The video reference is ONLY a guide for the camera trajectory, framing progression and timing. Do not reproduce distorted foliage, malformed text, shifting textures or invented objects from the reference video.\n\nBegin at the exact PHOTO 2 entrance-object viewpoint, with bamboo planting, dark perforated concrete-block base, warm spherical lamps and blue-lit rectangular aquarium. Make the same small smooth forward approach and gentle lateral arc around the aquarium as in the reference video, naturally turning the camera's gaze toward the tank. Finish at the exact PHOTO 3 oblique closer aquarium viewpoint. Nearby tank edges and lamps have stronger natural parallax than background bamboo and the entrance. Preserve the original path and pace, smoothly arriving at the end composition at 4 seconds. Adapt photographic references to 16:9 without stretching geometry.\n\nOne camera moves through one fixed three-dimensional space. The aquarium remains rectangular and rigid, with constant dimensions, water level, glass edges and mounting positions. Preserve the number and shape of spherical lamps, concrete-block holes, door frames, furniture visible through glass and all structural edges. Doors remain closed and stationary. No added foreground obstacles to hide transitions. Glass reflections change naturally with viewpoint; they must not become moving walls or sliding opaque surfaces.\n\nANTI-BOILING: there is no wind. Bamboo stems remain rooted in identical world positions with constant thickness, nodes and branch connectivity. Each visible leaf retains its shape and attachment; only perspective and real occlusion change. No melting, multiplication, blinking, stretching, merging or detached leaves. Keep coherent leaf clusters and negative spaces across successive frames, stable textures, no shimmering or crawling surfaces. Recover plant detail from the original photographs, not unstable source-video foliage.\n\nLETTERING: preserve every visible original sign as a fixed physical textured plane. Maintain photographic character shapes, stroke widths, spacing, logos and wood grain across all frames. Never redraw, morph or substitute characters, and never invent unreadable lettering. Existing lettering changes size and perspective only with camera motion. Preserve architectural materials, original warm evening exposure and realistic glass detail without oversharpening.\n\nFRAME CONTINUITY: every frame flows naturally from the previous frame. Start and end photographs are viewpoints in the same continuous shot, never images to switch between. No cuts, crossfades, dissolves, frame jumps, freezes, resets, endpoint snapping, room rearrangement, morphing, bending walls, floating blocks, duplicated lamps or camera shake. No added people, text overlays, annotations, music or audio. Prioritize stable real-space geometry and photographic texture over decorative movement.",
+  "job_id": "3205b4af-8024-4b77-a65d-c03c3e0e8007",
+  "quoted_credits": 48,
+  "status": "pending",
+  "site_applied": false
+}
