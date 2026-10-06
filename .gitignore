@@ -1,0 +1,10 @@
+.claude/
+
+# previz 시안 영상은 제외하고 사이트에서 쓰는 영상만 올림 (app.js의 clips 목록)
+previz-01/outputs/*.mp4
+!previz-01/outputs/01-to-02-seedance25-reference-1080p.mp4
+!previz-01/outputs/02-to-03-4s-seedance25-reference-1080p.mp4
+!previz-01/outputs/03-to-04-seedance25-reference-1080p.mp4
+!previz-01/outputs/04-to-05-seedance25-reference-1080p-cut.mp4
+!previz-01/outputs/05-to-06-seedance25-reference-1080p-ramp-fast.mp4
+!previz-01/outputs/06-to-07-text-lock-2s-fade.mp4
