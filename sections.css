@@ -557,3 +557,10 @@ html{scroll-padding-top:0}
 .pay-5+h3{margin-top:112px}
 .pay-5 .pay-phase{background:none;padding:0}
 .pay-flow{margin:40px 0 0!important}
+/* 문의 카드 버튼 3개: 20% 축소 */
+.cta-sns{max-width:352px;gap:10px}
+.cta-sns .action-glass,.cta-option .kakao-btn{min-height:62px;padding:13px 14px 13px 16px;gap:10px}
+.cta-option .action-glass .action-copy{font-size:13px}
+.cta-option .action-glass .action-arrow{width:37px;height:37px;font-size:18px}
+.cta-option .cta-sns-icon{width:16px;height:16px}
+.cta-option .kakao-icon{width:19px;height:19px}

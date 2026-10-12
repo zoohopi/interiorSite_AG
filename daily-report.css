@@ -50,3 +50,8 @@
 .report-title{margin-top:0}.report-example{margin-bottom:0}
 .report-stage:before{content:"";flex:5 1 0}
 .report-stage:after{content:"";flex:1 1 0}
+/* 채팅: 사진 4장 묶음 전송 (카카오톡 앨범처럼 2×2) */
+.report-album{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:174px;margin-top:7px;border-radius:7px;overflow:hidden}
+.report-album img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(max-height:900px){.is-animated .report-album{width:142px}}
+@media(max-height:760px){.is-animated .report-album{width:116px}}
