@@ -23,11 +23,16 @@
   <script src="app.js" defer></script>
   <script src="entrances.js" defer></script>
   <script src="daily-report.js" defer></script>
+  <script src="hero-video.js" defer></script>
 </head>
 <body>
   <main>
   <!-- 공감 히어로 -->
   <section class="hero" id="top" aria-label="아그디자인 소개">
+    <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+      <source src="files/hero-interior-mood-6s.mp4" type="video/mp4">
+    </video>
+    <button class="hero-video-toggle" type="button" aria-label="배경 영상 일시정지">영상 일시정지</button>
     <header class="header">
       <a class="brand" href="#top">아그디자인</a>
       <nav aria-label="주요 메뉴"><a href="#concerns">세 가지 약속</a><a href="#reviews">고객 후기</a><a href="#contact">상담</a></nav>
@@ -67,7 +72,64 @@
       <div class="card liquid-glass"><b>외식 프랜차이즈 슈퍼바이저</b><strong>6<small>년</small></strong><span>매장 운영 · 현장 점검</span></div>
       <div class="card liquid-glass"><b>매장 시공·오픈</b><strong aria-label="127개"><span id="career-count" aria-hidden="true">127</span><small aria-hidden="true">개</small></strong></div>
     </div>
-    <div class="logo-bar" aria-label="함께한 브랜드: 더본코리아, 대상, 멕시카나, 오니기리와 규동"><div class="logo-track"><img src="images/logos/theborn-black.png" alt="더본코리아" height="40"><img src="images/logos/daesang-black.png" alt="대상" height="40"><img src="images/logos/mexicana-black.png" alt="멕시카나" height="40"><img src="images/logos/onigiri-gyudong-black.png" alt="오니기리와 규동" height="40"><img src="images/logos/theborn-black.png" alt="" height="40"><img src="images/logos/daesang-black.png" alt="" height="40"><img src="images/logos/mexicana-black.png" alt="" height="40"><img src="images/logos/onigiri-gyudong-black.png" alt="" height="40"><img src="images/logos/theborn-black.png" alt="" height="40"><img src="images/logos/daesang-black.png" alt="" height="40"><img src="images/logos/mexicana-black.png" alt="" height="40"><img src="images/logos/onigiri-gyudong-black.png" alt="" height="40"><img src="images/logos/theborn-black.png" alt="" height="40"><img src="images/logos/daesang-black.png" alt="" height="40"><img src="images/logos/mexicana-black.png" alt="" height="40"><img src="images/logos/onigiri-gyudong-black.png" alt="" height="40"></div></div>
+    <div class="logo-bar" aria-label="함께한 브랜드: 더본코리아, 대상, 멕시카나, 홍루이젠"><div class="logo-track"><img src="images/logos/theborn-black.png" alt="더본코리아" height="40"><img src="images/logos/daesang-black.png" alt="대상" height="40"><img src="images/logos/mexicana-black.png" alt="멕시카나" height="40"><img src="images/logos/hongruijen-black.png" alt="홍루이젠" height="40"><img src="images/logos/theborn-black.png" alt="" height="40"><img src="images/logos/daesang-black.png" alt="" height="40"><img src="images/logos/mexicana-black.png" alt="" height="40"><img src="images/logos/hongruijen-black.png" alt="" height="40"><img src="images/logos/theborn-black.png" alt="" height="40"><img src="images/logos/daesang-black.png" alt="" height="40"><img src="images/logos/mexicana-black.png" alt="" height="40"><img src="images/logos/hongruijen-black.png" alt="" height="40"><img src="images/logos/theborn-black.png" alt="" height="40"><img src="images/logos/daesang-black.png" alt="" height="40"><img src="images/logos/mexicana-black.png" alt="" height="40"><img src="images/logos/hongruijen-black.png" alt="" height="40"></div></div>
+  </section>
+
+  <!-- 3가지 플랜 -->
+  <section class="sec" id="plans">
+    <span class="eyebrow">3 PLANS</span>
+    <h2>공사 스타일과 예산에 맞춰<br><em>세 가지 플랜 중 선택하세요</em></h2>
+    <p class="lead">직접 해보실 분부터, 전부 맡기실 분까지. 대표님께 맞는 방식으로 함께합니다.</p>
+    <div class="plans-grid">
+      <article class="plan" tabindex="0" aria-label="STARTER PLAN · 카드를 뒤집어 업무 분담 보기">
+        <div class="plan-front card liquid-glass">
+          <span class="plan-no">PLAN 01</span>
+          <h3>STARTER PLAN</h3>
+          <p class="plan-tag">실패 없는 셀프 인테리어의 시작</p>
+          <ul class="plan-scope"><li>공간 디자인 기획</li><li>공사 기획</li></ul>
+          <ul class="plan-items"><li>공사 시작 전 모든 기획 설계</li></ul>
+          <p class="plan-desc">공사 경험이 있으시거나 규모나 예산이 적은 분들을 위한 서비스. 셀프 인테리어 과정 중 실패를 줄이기 위한 계획 솔루션입니다.</p>
+          <span class="plan-hint">↻ 업무 분담 보기</span>
+        </div>
+        <div class="plan-back card liquid-glass">
+          <span class="plan-no">PLAN 01 · 업무 분담</span>
+          <div class="duty-head"><b>대표님</b><b>아그디자인</b></div>
+          <ol class="duty"><li class="is-ag"><span>디자인 기획</span></li><li class="is-ag"><span>공사 기획</span></li><li class="is-owner"><span>업체 계약</span></li><li class="is-owner"><span>업체 소통</span></li><li class="is-owner"><span>공사 감리</span></li><li class="is-owner"><span>사후 관리</span></li></ol>
+        </div>
+      </article>
+      <article class="plan is-new" tabindex="0" aria-label="NEW STANDARD · 카드를 뒤집어 업무 분담 보기">
+        <div class="plan-front card liquid-glass-strong">
+          <span class="plan-no">PLAN 02<b>NEW</b></span>
+          <h3>NEW STANDARD</h3>
+          <p class="plan-tag">중간 비용은 줄이고, 품질은 지키는 새로운 방식</p>
+          <ul class="plan-scope"><li>공간 디자인 기획</li><li>공사 기획</li><li>감리 · 완공</li></ul>
+          <ul class="plan-items"><li>스타터 플랜 + 시공 관리 감독</li></ul>
+          <p class="plan-desc">업체와는 직접 계약과 현장을 확인하고, 소통과 공사 기획을 아그디자인이 대신합니다. 중간 비용은 줄이고 결과물의 질은 높입니다.</p>
+          <span class="plan-hint">↻ 업무 분담 보기</span>
+        </div>
+        <div class="plan-back card liquid-glass-strong">
+          <span class="plan-no">PLAN 02 · 업무 분담</span>
+          <div class="duty-head"><b>대표님</b><b>아그디자인</b></div>
+          <ol class="duty"><li class="is-ag"><span>디자인 기획</span></li><li class="is-ag"><span>공사 기획</span></li><li class="is-owner"><span>업체 계약</span></li><li class="is-ag"><span>업체 소통</span></li><li class="is-owner"><span>공사 감리</span></li><li class="is-owner"><span>사후 관리</span></li></ol>
+        </div>
+      </article>
+      <article class="plan" tabindex="0" aria-label="TOTAL PLAN · 카드를 뒤집어 업무 분담 보기">
+        <div class="plan-front card liquid-glass">
+          <span class="plan-no">PLAN 03</span>
+          <h3>TOTAL PLAN</h3>
+          <p class="plan-tag">신경 쓸 일 없이 맡기는 턴키 방식</p>
+          <ul class="plan-scope"><li>공간 디자인 기획</li><li>업체 계약</li><li>시공 · 감리 · 완공</li><li>사후 관리</li></ul>
+          <ul class="plan-items"><li>공사 기획 + 공사 진행 + 사후 관리</li></ul>
+          <p class="plan-desc">공간 디자인 기획부터 업체 계약, 시공 · 감리 · 완공, 사후 관리까지 전 과정을 함께합니다.</p>
+          <span class="plan-hint">↻ 업무 분담 보기</span>
+        </div>
+        <div class="plan-back card liquid-glass">
+          <span class="plan-no">PLAN 03 · 업무 분담</span>
+          <div class="duty-head"><b>대표님</b><b>아그디자인</b></div>
+          <ol class="duty"><li class="is-ag"><span>디자인 기획</span></li><li class="is-ag"><span>공사 기획</span></li><li class="is-ag"><span>업체 계약</span></li><li class="is-ag"><span>업체 소통</span></li><li class="is-ag"><span>공사 감리</span></li><li class="is-ag"><span>사후 관리</span></li></ol>
+        </div>
+      </article>
+    </div>
   </section>
 
   <!-- 01 돈 떼일까? -->
@@ -76,18 +138,15 @@
     <h2>“계약금만 받고<br><em>사라지면 어쩌지?”</em></h2>
 
     <div class="block">
-      <h3>공사가 진행된 만큼만 지급하시면 됩니다.</h3>
-      <div class="pay-bar" role="img" aria-label="계약금 20%(철거), 기초 공정(목공·금속) 완료 시 40%, 마감 공정(타일·필름·도장) 완료 시 30%, 공사 마감 후 잔금 10%(데코레이션)">
-        <div class="liquid-glass" style="flex:17"><b>20%</b><span>계약금</span><div class="pay-phases"><div class="pay-phase"><em>준비 공정 20%</em><ol><li class="liquid-glass">철거</li></ol></div></div></div>
-        <div class="pay-steps liquid-glass-strong" style="flex:71.5"><b>70%</b><span>공정 완료 시마다 단계별 지급</span>
-          <div class="pay-phases">
-            <div class="pay-phase" style="flex:40"><em>기초 공정 40%</em><ol><li class="liquid-glass">목공</li><li class="liquid-glass">금속</li></ol></div>
-            <div class="pay-phase" style="flex:30"><em>마감 공정 30%</em><ol><li class="liquid-glass">타일</li><li class="liquid-glass">필름</li><li class="liquid-glass">도장</li></ol></div>
-          </div>
-        </div>
-        <div class="liquid-glass" style="flex:11.5"><b>10%</b><span>공사 마감 시 잔금</span><div class="pay-phases"><div class="pay-phase"><em>마감 공정 10%</em><ol><li class="liquid-glass">데코레이션</li></ol></div></div></div>
+      <h3>큰 금액을 한 번에 맡기지 마세요.<br>공정이 끝날 때마다 5번에 나눠 지급합니다.</h3>
+      <div class="pay-bar pay-5" role="img" aria-label="5단계 지급: 1단계 디자인 계약(디자인 착수·2D 도안 설계·3D 디자인 설계), 2단계 준비공정(철거·공조 설계·상하수 설비), 3단계 구조공정(목공·금속·바닥 공정), 4단계 마감공정(타일·필름·도장 공정), 5단계 디테일공정(데코레이션·디테일 수정·시운전 검사)">
+        <div class="liquid-glass"><b>1단계</b><span>디자인 계약</span><div class="pay-phases"><div class="pay-phase"><ol><li class="liquid-glass">디자인 착수</li><li class="liquid-glass">2D 도안 설계</li><li class="liquid-glass">3D 디자인 설계</li></ol></div></div></div>
+        <div class="liquid-glass"><b>2단계</b><span>준비공정</span><div class="pay-phases"><div class="pay-phase"><ol><li class="liquid-glass">철거</li><li class="liquid-glass">공조 설계</li><li class="liquid-glass">상하수 설비</li></ol></div></div></div>
+        <div class="liquid-glass"><b>3단계</b><span>구조공정</span><div class="pay-phases"><div class="pay-phase"><ol><li class="liquid-glass">목공 공정</li><li class="liquid-glass">금속 공정</li><li class="liquid-glass">바닥 공정</li></ol></div></div></div>
+        <div class="liquid-glass"><b>4단계</b><span>마감공정</span><div class="pay-phases"><div class="pay-phase"><ol><li class="liquid-glass">타일 공정</li><li class="liquid-glass">필름 공정</li><li class="liquid-glass">도장 공정</li></ol></div></div></div>
+        <div class="liquid-glass"><b>5단계</b><span>디테일공정</span><div class="pay-phases"><div class="pay-phase"><ol><li class="liquid-glass">데코레이션</li><li class="liquid-glass">디테일 수정</li><li class="liquid-glass">시운전 검사</li></ol></div></div></div>
       </div>
-      <p class="note">진행 상황 먼저 확인하세요. 10%는 공사 마감을 확인하신 뒤 지급하시면 됩니다.</p>
+      <p class="note">진행 상황 먼저 확인하세요. 각 단계의 공정이 끝난 것을 확인하신 뒤 지급하시면 됩니다.</p>
     </div>
 
     <div class="block quote-row">
@@ -102,15 +161,14 @@
         <div class="report-stage">
           <div class="report-copy report-title">
             <span class="eyebrow">DAILY REPORT</span>
-            <h3>매일 오늘의 진행사항을<br>‘공사일보’로 공유드립니다</h3>
+            <h3>매일 오늘의 진행사항을<br>공유드립니다</h3>
           </div>
           <div class="report-shade" aria-hidden="true"></div>
           <div class="report-chat" aria-label="아그디자인과 대표님의 공사일보 전달 대화 예시">
             <header class="chat-head"><span aria-hidden="true">‹</span><div><b>아그디자인</b><small>오늘의 현장을 전해드립니다</small></div><span aria-hidden="true">☰</span></header>
             <div class="chat-body">
               <p class="chat-date">매일 이어지는 현장 소식</p>
-              <div class="chat-in"><span class="chat-avatar" aria-hidden="true">ag</span><div class="chat-messages"><span class="chat-name">아그디자인</span><p class="chat-bubble">대표님 안녕하세요 :)<br>금일 공사일보 전달드립니다!</p>
-                <div class="report-photo-slot"><a class="report-photo report-attachment" href="images/daily-report.png" target="_blank" rel="noopener" aria-label="공사일보 사진 원본 보기 (새 탭)"><img src="images/daily-report.png" alt="공사일보에 첨부된 현장 작업 사진 6장" width="1034" height="525" loading="lazy"></a></div>
+              <div class="chat-in"><span class="chat-avatar" aria-hidden="true">ag</span><div class="chat-messages"><span class="chat-name">아그디자인</span><p class="chat-bubble">대표님 안녕하세요 :)<br>금일 공사 진행사항 전달드립니다!</p>
                 <div class="report-video-slot"><div class="report-film report-attachment"><video controls muted playsinline preload="none" aria-label="오늘의 공사 현장 영상"><source src="files/daily-report.mp4" type="video/mp4"></video><button class="report-play" type="button" aria-label="현장 영상 재생">▶<span>현장 영상 보기</span></button></div></div>
               </div></div>
               <div class="chat-out"><span class="chat-name">대표님</span><p class="chat-bubble">공유해 주셔서 감사합니다!<br>오늘 많이 진행됐네요.<br>고생 많으셨습니다.</p></div>
@@ -119,21 +177,20 @@
             <div class="chat-compose" aria-hidden="true"><span>＋</span><span>메시지 입력</span><span>☺</span></div>
           </div>
           <p class="report-cue">스크롤하며 오늘의 현장을 확인하세요 ↓</p>
-          <span class="report-example">공사일보 전달 대화 예시 · 실제 현장 사진 및 영상</span>
+          <span class="report-example">공사일보 전달 대화 예시 · 실제 현장 영상</span>
         </div>
       </div>
       <div class="report-copy report-details">
         <ul class="checks">
-          <li><b>진행률</b>오늘까지 전체 공정의 몇 %가 끝났는지</li>
-          <li><b>현장 사진</b>오늘 작업한 부분을 사진으로</li>
-          <li><b>작업 내용</b>어떤 공정을, 어디까지 했는지</li>
+          <li>오늘 어떤 공정이 진행됐는지</li>
+          <li>오늘 작업한 부분을 파노라마 비디오 전달</li>
+          <li>오늘 작업 중 특이사항은 있었는지</li>
         </ul>
-        <p class="muted">현장에 나오지 않으셔도, 휴대폰으로 매일 확인하실 수 있습니다.</p>
       </div>
     </div>
 
     <div class="block as-row" id="report-end">
-      <div class="stat"><strong>1<small>년</small></strong><p>하자 무상 A/S</p></div>
+      <div class="stat"><p>'아그디자인'과 함께한 대표님들의 리뷰</p></div>
       <div class="reviews-slider" aria-roledescription="carousel" aria-label="고객 후기">
         <div class="rv-track" tabindex="0">
           <article class="rv-card card liquid-glass">
@@ -191,13 +248,7 @@
 
     <div class="block promise">
       <h3>다른 업체한테 받은 견적이 있으신가요?<br><em>합리적인 가격인지 무료로 진단해드립니다.</em></h3>
-    </div>
-
-    <div class="block">
-      <a class="action-glass liquid-glass-strong" href="files/namsan-estimate.xlsx" download="남산장어_공사 항목정리.xlsx">
-        <span class="action-copy"><span>남산장어 실제 항목정리 견적서 받기</span><small>엑셀 · 15개 공종, 항목별 자재비·노무비</small></span><span class="action-arrow liquid-glass" aria-hidden="true">↓</span>
-      </a>
-      <p class="note" style="text-align:center;margin-top:31px!important">받아보신 다른 업체 견적과 항목별로 나란히 비교해 보세요.<br>금액이 합당한지 직접 판단하실 수 있습니다.</p>
+      <p class="note" style="text-align:center;margin-top:20px!important">받아보신 다른 업체 견적과 항목별로 나란히 비교해 보세요.<br>금액이 합당한지 직접 판단하실 수 있습니다.</p>
     </div>
   </section>
 
@@ -286,14 +337,14 @@
       <span class="eyebrow">PROCESS</span>
       <h3>아그디자인과 함께하실 프로젝트 과정</h3>
       <ol class="rm-list">
-        <li class="rm-step is-right"><span class="rm-dot" aria-hidden="true">01</span><div class="rm-card"><h4><span class="rm-num">1</span>문의</h4><p>‘아그디자인’으로 문의하시면 화상 미팅 후 현장 방문 미팅을 진행합니다.</p></div></li>
-        <li class="rm-step is-left"><span class="rm-dot" aria-hidden="true">02</span><div class="rm-card"><h4><span class="rm-num">2</span>현장 미팅</h4><p>현장 컨디션을 조사하고, 만들어질 공간에 대하여 함께 논의합니다.</p><div class="rm-video"><video src="files/site-meeting.mp4" poster="images/site-meeting-poster.jpg" preload="none" playsinline></video><button type="button" class="rm-play liquid-glass" aria-label="현장 미팅 영상 재생">▶</button></div></div></li>
-        <li class="rm-step is-right"><span class="rm-dot" aria-hidden="true">03</span><div class="rm-card"><h4><span class="rm-num">3</span>0차 PT</h4><p>현장조사와 미팅 내용을 바탕으로 컨셉 및 이미지를 제안합니다.</p><div class="rm-media rm-rotator is-fit"><img src="images/plan/plan-1.jpg" alt="" loading="lazy" class="is-on"></div></div></li>
+        <li class="rm-step is-right"><span class="rm-dot" aria-hidden="true">01</span><div class="rm-card"><h4><span class="rm-num">1</span>문의</h4><p>‘아그디자인’으로 문의하시면 간단한 설문 조사로 시작됩니다.</p></div></li>
+        <li class="rm-step is-left"><span class="rm-dot" aria-hidden="true">02</span><div class="rm-card"><h4><span class="rm-num">2</span>미팅</h4><p>하고자하는 매장, 브랜드 업종 대한 내용을 듣고 대표님의 니즈를 파악합니다.</p><div class="rm-video"><video src="files/site-meeting.mp4" poster="images/site-meeting-poster.jpg" preload="none" playsinline></video><button type="button" class="rm-play liquid-glass" aria-label="현장 미팅 영상 재생">▶</button></div></div></li>
+        <li class="rm-step is-right"><span class="rm-dot" aria-hidden="true">03</span><div class="rm-card"><h4><span class="rm-num">3</span>0차 PT</h4><p>미팅 내용을 바탕으로 컨셉과 공간 방향을 제안합니다.</p><div class="rm-media rm-rotator is-fit"><img src="images/plan/plan-1.jpg" alt="" loading="lazy" class="is-on"></div></div></li>
         <li class="rm-step is-left"><span class="rm-dot" aria-hidden="true">04</span><div class="rm-card"><h4><span class="rm-num">4</span>디자인 계약</h4><p>PT 결과를 토대로 디자인 착수 계약을 합니다.</p><div class="rm-media rm-rotator is-fit"><img src="images/plan/plan-2-cut.webp" alt="" loading="lazy" class="is-on"><img src="images/plan/plan-3-cut.webp" alt="" loading="lazy"></div></div></li>
-        <li class="rm-step is-right"><span class="rm-dot" aria-hidden="true">05</span><div class="rm-card"><h4><span class="rm-num">5</span>설계 & 디자인 PT</h4><p>지속적인 소통으로 2D, 3D 디자인 시안을 설계합니다.</p><div class="rm-media rm-rotator is-fit"><img src="images/plan/plan-4-cut.webp" alt="" loading="lazy" class="is-on"><img src="images/plan/plan-5-cut.webp" alt="" loading="lazy"></div></div></li>
-        <li class="rm-step is-left"><span class="rm-dot" aria-hidden="true">06</span><div class="rm-card"><h4><span class="rm-num">6</span>디자인 확정 및 시공 계약</h4><p>최종 확정된 디자인과 3D 시안을 토대로 확정 견적서 및 계약서를 작성합니다.</p><div class="rm-media rm-rotator"><img src="images/plan/plan-6.jpg" alt="" loading="lazy" class="is-on"><img src="images/plan/plan-7.jpg" alt="" loading="lazy"></div></div></li>
-        <li class="rm-step is-right"><span class="rm-dot" aria-hidden="true">07</span><div class="rm-card"><h4><span class="rm-num">7</span>공사</h4><p>디자인 계획에 따라 진행됩니다.</p><div class="rm-video"><video src="images/plan/plan-8.mp4" poster="images/plan/plan-8-poster.jpg" preload="none" playsinline></video><button type="button" class="rm-play liquid-glass" aria-label="공사 영상 재생">▶</button></div></div></li>
-        <li class="rm-step is-left"><span class="rm-dot" aria-hidden="true">08</span><div class="rm-card"><h4><span class="rm-num">8</span>사후 관리</h4><p>완공 후 1년간 문제 발생 시 책임감을 가지고 보수, 관리해 드립니다.</p><div class="rm-media rm-rotator"><img src="images/plan/plan-9.jpg" alt="" loading="lazy" class="is-on"><img src="images/plan/plan-10.jpg" alt="" loading="lazy"></div></div></li>
+        <li class="rm-step is-right"><span class="rm-dot" aria-hidden="true">05</span><div class="rm-card"><h4><span class="rm-num">5</span>디자인 미팅 1~4차</h4><p>컨셉, 공간 레이아웃, 컬러링, 디테일 의 순서로 진행합니다</p><div class="rm-media rm-rotator is-fit"><img src="images/plan/plan-4-cut.webp" alt="" loading="lazy" class="is-on"><img src="images/plan/plan-5-cut.webp" alt="" loading="lazy"></div></div></li>
+        <li class="rm-step is-left"><span class="rm-dot" aria-hidden="true">06</span><div class="rm-card"><h4><span class="rm-num">6</span>시공 계약</h4><p>확정된 디자인의 상세 견적으로 공사를 계약합니다.</p><div class="rm-media rm-rotator"><img src="images/plan/plan-6.jpg" alt="" loading="lazy" class="is-on"><img src="images/plan/plan-7.jpg" alt="" loading="lazy"></div></div></li>
+        <li class="rm-step is-right"><span class="rm-dot" aria-hidden="true">07</span><div class="rm-card"><h4><span class="rm-num">7</span>공사</h4><p>논의한 디자인 계획에 맞춰 공사를 실행합니다.</p><div class="rm-video"><video src="images/plan/plan-8.mp4" poster="images/plan/plan-8-poster.jpg" preload="none" playsinline></video><button type="button" class="rm-play liquid-glass" aria-label="공사 영상 재생">▶</button></div></div></li>
+        <li class="rm-step is-left"><span class="rm-dot" aria-hidden="true">08</span><div class="rm-card"><h4><span class="rm-num">8</span>사후 관리</h4><p>책임시공 협력업체가 책임감을 가지고 보수 관리 합니다.</p><div class="rm-media rm-rotator"><img src="images/plan/plan-9.jpg" alt="" loading="lazy" class="is-on"><img src="images/plan/plan-10.jpg" alt="" loading="lazy"></div></div></li>
       </ol>
     </div>
   </section>
@@ -330,6 +381,10 @@
   <footer class="site-foot">
     <a href="#top"><img src="images/logo-removebg.png" alt="아그디자인 alwaysgreen design" width="115" height="123"></a>
     <p>공사는 맡기시고,<br>사업 본질에 몰두하세요.</p>
+    <nav class="sns" aria-label="아그디자인 SNS">
+      <a href="https://www.instagram.com/design_alwaysgreen" target="_blank" rel="noopener" aria-label="인스타그램 (새 탭)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg></a>
+      <a href="https://www.threads.com/@design_alwaysgreen" target="_blank" rel="noopener" aria-label="스레드 (새 탭)"><svg viewBox="0 0 192 192" aria-hidden="true"><path fill="currentColor" d="M141.5 89c-.8-.4-1.7-.8-2.5-1.2-1.5-27.1-16.3-42.6-41.1-42.8h-.3c-14.8 0-27.2 6.3-34.8 17.9l13.6 9.3c5.7-8.6 14.6-10.4 21.2-10.4h.2c8.2.1 14.4 2.4 18.4 7.1 2.9 3.4 4.9 8.1 5.9 14.1-7.3-1.2-15.2-1.6-23.6-1.2-23.7 1.4-39 15.2-38 34.4.5 9.7 5.4 18.1 13.7 23.6 7 4.6 16.1 6.9 25.5 6.4 12.4-.7 22.2-5.4 29-14.1 5.2-6.6 8.5-15.2 9.9-26 5.9 3.6 10.3 8.3 12.7 13.9 4.1 9.6 4.4 25.4-8.5 38.3-11.3 11.3-24.9 16.2-45.4 16.3-22.8-.2-40-7.5-51.2-21.7C40.3 125.4 34.9 106.8 34.7 96c.2-10.8 5.6-29.4 16.1-42.7 11.2-14.2 28.4-21.5 51.2-21.7 22.9.2 40.4 7.5 52 21.8 5.7 7 10 15.8 12.8 26l15.9-4.2c-3.4-12.6-8.8-23.4-16.1-32.4C151.8 24.3 130 15.2 102 15h-.1C74 15.2 52.5 24.3 38 42.2 25.2 58.2 18.6 80.3 18.4 96v.1c.2 15.7 6.8 37.8 19.6 53.8 14.5 17.9 36 27 63.9 27.2h.1c24.8-.2 42.3-6.7 56.7-21.1 18.8-18.8 18.3-42.4 12.1-56.8-4.5-10.3-13-18.7-24.6-24.2zm-42.8 40.3c-10.4.6-21.1-4.1-21.7-14.1-.4-7.4 5.3-15.7 22.4-16.7 2-.1 3.9-.2 5.8-.2 6.2 0 12 .6 17.3 1.8-2 24.6-13.5 28.6-23.8 29.2z"/></svg></a>
+    </nav>
     <span>© 2026 ALWAYSGREEN DESIGN</span><a href="#top">맨 위로 ↑</a>
   </footer>
   <noscript>이 공간 투어를 보려면 JavaScript를 활성화해주세요.</noscript>

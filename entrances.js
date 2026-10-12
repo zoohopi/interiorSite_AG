@@ -93,3 +93,8 @@
   }, { threshold: 0.5 });
   observer.observe(count);
 })();
+
+// 플랜 카드: 마우스가 없는 기기는 눌러서 앞·뒷면 전환
+if (matchMedia('(hover: none)').matches) {
+  document.querySelectorAll('.plan').forEach(card => card.addEventListener('click', () => card.classList.toggle('is-flipped')));
+}

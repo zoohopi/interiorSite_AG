@@ -47,7 +47,11 @@ img{display:block;max-width:100%}
 
 /* 공감 히어로 (site hero 톤) */
 .hero{position:relative;height:100vh;height:100svh;min-height:600px;display:flex;flex-direction:column;justify-content:center;padding:120px var(--pad) 90px;color:var(--ink);background:linear-gradient(180deg,#0b0d0cf2 0%,#0b0d0cdb 45%,#0b0d0c 100%),url(previz-01/inputs/photo-01.jpg) center/cover}
-.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 85% 100%,#18382455,transparent 55%);pointer-events:none}
+.hero{isolation:isolate;overflow:hidden;background:#0b0d0c}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,13,12,.5) 0%,rgba(11,13,12,.4) 38%,rgba(11,13,12,.55) 64%,rgba(11,13,12,.86) 85%,#0b0d0c 100%);pointer-events:none}
+.hero-video-toggle{position:absolute;right:var(--pad);bottom:28px;z-index:3;border:1px solid #ffffff45;border-radius:999px;padding:9px 14px;background:#0b0d0c66;color:#d9dfda;font-size:11px;cursor:pointer}
+#journey .stage:after{content:"";position:absolute;inset:0 0 auto;height:clamp(90px,16vh,180px);background:linear-gradient(#0b0d0c,transparent);pointer-events:none;z-index:1}
 .header{position:absolute;left:0;right:0;top:0;z-index:2;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px 42px;min-height:86px;padding:16px var(--pad);border-bottom:1px solid var(--line)}
 .brand{font-size:21px;letter-spacing:-.06em;font-weight:600}
 .header nav{display:flex;gap:38px;font-size:13px}
@@ -413,3 +417,101 @@ body{overflow-x:clip}
 html{scroll-padding-top:0}
 #reviews{scroll-margin-top:-80px}
 #reviews .action-glass{margin-top:48px}
+
+/* 공간 투어 제목: 한 줄 유지 (가장 긴 제목 기준 크기) */
+.caption{max-width:1100px}
+.caption h1,.caption h2{font-size:clamp(24px,2.5vw,40px);white-space:nowrap}
+@media(max-width:800px){.caption h1,.caption h2{font-size:clamp(18px,4.6vw,26px);white-space:normal}}
+
+/* 푸터 SNS 링크 */
+.sns{display:flex;gap:14px}
+.sns a{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:9999px;color:#c5cec7;transition:color .2s,border-color .2s}
+.sns svg{width:20px;height:20px}
+@media(hover:hover){.sns a:hover{color:#fff;border-color:var(--accent)}}
+
+/* 결제 5단계: 같은 폭 */
+.pay-5>div{flex:1}
+.pay-5 .pay-phase ol{grid-auto-flow:row;grid-auto-columns:auto}
+.pay-5>div:nth-child(2){background:linear-gradient(145deg,rgba(40,58,46,.6),rgba(16,24,19,.6))}
+.pay-5>div:nth-child(2),.pay-5>div:nth-child(4){background:linear-gradient(145deg,#2c4636,#18281e)}
+
+/* 3가지 플랜 */
+.plans-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1100px;margin:0 auto;align-items:stretch}
+.plan{display:flex;flex-direction:column;gap:18px;padding:34px 28px}
+.plan-no{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.15em;color:var(--accent)}
+.plan-no b{padding:3px 9px;border-radius:9999px;background:var(--accent);color:#0b0d0c;font-size:10px;letter-spacing:.1em}
+.sec .plan h3{margin:0;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em}
+.plan-tag{margin-top:-10px!important;font-size:14px;color:#c5d2c8}
+.plan-scope{list-style:none;margin:0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:8px}
+.plan-scope li{font-size:15px;font-weight:500}
+.plan-scope li:before{content:"✓";margin-right:10px;color:var(--accent)}
+.plan-items{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.plan-items li{padding:6px 11px;border-radius:9999px;background:rgba(255,255,255,.06);font-size:12px;color:#e1e4de}
+.plan-desc{margin-top:auto!important;font-size:14px;line-height:1.8!important;color:#adb9af}
+.plan.is-new{background:linear-gradient(145deg,#2c4636,#18281e)}
+@media(max-width:800px){.plans-grid{grid-template-columns:1fr}.plan{padding:28px 22px}}
+/* 견적 진단 안내: 아래 구분선 없이 */
+.promise{border-bottom:0}
+/* 플랜 카드: 마우스 올리면 살짝 커짐 */
+.plan{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
+@media(hover:hover){.plan:hover{transform:scale(1.04);box-shadow:0 24px 60px #0007;z-index:1}}
+@media(prefers-reduced-motion:reduce){.plan{transition:none}}
+/* 플랜 카드: 가운데 정렬 */
+.plan{text-align:center}
+.plan-no,.plan-items{justify-content:center}
+.plan-scope{justify-items:center}
+/* 플랜 카드: 요약 한 줄과 설명 사이 간격을 카드마다 같게 */
+.plan-desc{margin-top:0!important}
+
+/* 플랜 카드 퀄리티 업 */
+.plan{overflow:hidden;padding:40px 30px 36px;gap:20px;background:radial-gradient(120% 70% at 50% 0,rgba(169,197,170,.12),transparent 60%),linear-gradient(160deg,rgba(40,58,46,.6),rgba(16,24,19,.7))}
+.plan:after{content:"";position:absolute;left:30px;right:30px;top:0;height:2px;border-radius:0 0 2px 2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.5;transition:opacity .35s}
+.plan.is-new{background:radial-gradient(120% 70% at 50% 0,rgba(169,197,170,.2),transparent 60%),linear-gradient(160deg,#2c4636,#18281e)}
+.plan.is-new:after{opacity:1}
+.plan-no{font-size:11px;letter-spacing:.22em;font-weight:600}
+.plan-no b{padding:4px 10px;letter-spacing:.14em}
+.sec .plan h3{font-size:clamp(24px,2.2vw,30px);font-weight:600;letter-spacing:-.01em}
+.plan-tag{margin-top:-12px!important;font-size:14px;color:#c5d2c8}
+.plan-scope{gap:10px;padding:20px 0;border-color:#ffffff1a}
+.plan-scope li{display:flex;align-items:center;gap:10px;font-size:15px}
+.plan-scope li:before{content:"✓";display:grid;place-items:center;width:20px;height:20px;margin:0;border-radius:50%;background:#a9c5aa26;color:var(--accent);font-size:11px;font-weight:700}
+.plan-items li{padding:9px 16px;border:1px solid #a9c5aa55;background:#a9c5aa14;color:var(--ink);font-size:13px;font-weight:500}
+.plan-desc{color:#a7b3a9}
+.plan{transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s}
+@media(hover:hover){
+  .plan:hover{transform:scale(1.08);box-shadow:0 30px 80px #000a,0 0 0 1px #a9c5aa40;z-index:2}
+  .plan:hover:after{opacity:1}
+}
+@media(prefers-reduced-motion:reduce){.plan{transition:none}}
+/* 플랜 카드: 줄(번호·제목·소개·범위·요약·설명)을 카드끼리 같은 높이로 맞춤 → 구분선 위치 통일, 범위 목록은 위아래 여백 가운데 */
+.plans-grid{grid-auto-rows:auto;row-gap:20px}
+.plan{display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:20px;align-content:start}
+.plan-scope{align-content:center}
+
+/* ───────── 플랜 카드 뒤집기: 앞면(플랜 소개) · 뒷면(업무 분담) ───────── */
+.plan{position:relative;display:grid;grid-row:span 7;grid-template-rows:subgrid;row-gap:0;padding:0;background:none!important;overflow:visible;perspective:1400px;border-radius:1.5rem;outline:none;cursor:pointer}
+.plan:after{content:none}
+.plan-front,.plan-back{border-radius:1.5rem;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .7s cubic-bezier(.3,.7,.2,1)}
+.plan-front{grid-row:1/-1;display:grid;grid-template-rows:subgrid;row-gap:20px;padding:40px 30px 30px;text-align:center;background:radial-gradient(120% 70% at 50% 0,rgba(169,197,170,.12),transparent 60%),linear-gradient(160deg,rgba(40,58,46,.6),rgba(16,24,19,.7))}
+.plan.is-new .plan-front{background:radial-gradient(120% 70% at 50% 0,rgba(169,197,170,.2),transparent 60%),linear-gradient(160deg,#2c4636,#18281e)}
+.plan-back{position:absolute;inset:0;display:grid;grid-template-rows:1fr auto 1fr;padding:60px 26px;transform:rotateY(180deg);background:radial-gradient(120% 60% at 50% 100%,rgba(169,197,170,.16),transparent 60%),linear-gradient(160deg,#22362a,#111a14)}
+.plan:hover .plan-front,.plan:focus-visible .plan-front,.plan.is-flipped .plan-front{transform:rotateY(-180deg)}
+.plan:hover .plan-back,.plan:focus-visible .plan-back,.plan.is-flipped .plan-back{transform:rotateY(0)}
+.plan:focus-visible{transform:scale(1.08);z-index:2}
+.plan-hint{font-size:12px;letter-spacing:.04em;color:var(--accent);opacity:.75}
+.plan-back .plan-no{position:absolute;top:28px;left:0;right:0;justify-content:center}
+@media(prefers-reduced-motion:reduce){.plan-front,.plan-back{transition:none}}
+/* 뒷면: 위→아래 업무 흐름 (왼쪽 대표님 · 오른쪽 아그디자인) */
+.plan-back{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:64px 22px 30px}
+.duty-head{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.duty-head b{justify-self:end;padding:6px 14px;border-radius:9999px;background:#ffffff17;font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--ink)}
+.duty-head b+b{justify-self:start;background:var(--accent);color:#0b0d0c}
+.duty{position:relative;list-style:none;margin:0;padding:6px 0}
+.duty:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;transform:translateX(-50%);background:linear-gradient(transparent,#a9c5aa88 8%,#a9c5aa88 92%,transparent)}
+.duty li{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;min-height:42px}
+.duty li:before{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 4px #17241b}
+.duty li.is-owner:before{background:#d6ddd6}
+.duty li.is-ag:before{background:var(--accent)}
+.duty span{padding:7px 13px;border-radius:9999px;font-size:13px;white-space:nowrap;color:var(--ink)}
+.duty .is-owner span{grid-column:1;justify-self:end;border:1px solid #ffffff2b}
+.duty .is-ag span{grid-column:2;justify-self:start;border:1px solid #a9c5aa66;background:#a9c5aa1a}
