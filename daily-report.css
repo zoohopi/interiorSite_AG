@@ -46,3 +46,7 @@
 .report-stage{padding-bottom:8px}
 .report-details{padding-top:0}
 .report .checks{margin-top:8px}
+/* 남는 높이를 위쪽에 더 많이 배분해서(5:1) 아래 체크 목록과 붙임 */
+.report-title{margin-top:0}.report-example{margin-bottom:0}
+.report-stage:before{content:"";flex:5 1 0}
+.report-stage:after{content:"";flex:1 1 0}

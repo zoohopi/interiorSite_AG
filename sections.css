@@ -432,8 +432,6 @@ html{scroll-padding-top:0}
 /* 결제 5단계: 같은 폭 */
 .pay-5>div{flex:1}
 .pay-5 .pay-phase ol{grid-auto-flow:row;grid-auto-columns:auto}
-.pay-5>div:nth-child(2){background:linear-gradient(145deg,rgba(40,58,46,.6),rgba(16,24,19,.6))}
-.pay-5>div:nth-child(2),.pay-5>div:nth-child(4){background:linear-gradient(145deg,#2c4636,#18281e)}
 
 /* 3가지 플랜 */
 .plans-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1100px;margin:0 auto;align-items:stretch}
@@ -450,8 +448,6 @@ html{scroll-padding-top:0}
 .plan-desc{margin-top:auto!important;font-size:14px;line-height:1.8!important;color:#adb9af}
 .plan.is-new{background:linear-gradient(145deg,#2c4636,#18281e)}
 @media(max-width:800px){.plans-grid{grid-template-columns:1fr}.plan{padding:28px 22px}}
-/* 견적 진단 안내: 아래 구분선 없이 */
-.promise{border-bottom:0}
 /* 플랜 카드: 마우스 올리면 살짝 커짐 */
 .plan{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
 @media(hover:hover){.plan:hover{transform:scale(1.04);box-shadow:0 24px 60px #0007;z-index:1}}
@@ -515,3 +511,49 @@ html{scroll-padding-top:0}
 .duty span{padding:7px 13px;border-radius:9999px;font-size:13px;white-space:nowrap;color:var(--ink)}
 .duty .is-owner span{grid-column:1;justify-self:end;border:1px solid #ffffff2b}
 .duty .is-ag span{grid-column:2;justify-self:start;border:1px solid #a9c5aa66;background:#a9c5aa1a}
+/* 뒷면 요소를 카드 높이에 맞춰 펼침 · 공동 업무 · 하단 안내 */
+.plan-back{justify-content:flex-start;gap:20px;padding:72px 24px 34px}
+.duty{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:8px 0}
+.duty li{min-height:44px}
+.duty span{font-size:14px;padding:8px 15px}
+.duty li.is-both:before{display:none}
+.duty .is-both span{grid-column:1/-1;justify-self:center;position:relative;z-index:1;border:1px solid #a9c5aa66;background:linear-gradient(90deg,#1c2a21 0 50%,#2b3d31 50% 100%)}
+.duty-note{margin:0!important;font-size:12px;color:var(--accent);text-align:center}
+.doc-sample{margin-top:10px!important;text-align:right;font-size:11px;color:var(--muted)}
+
+/* 결제 5단계: 카드 사이 세로선으로 입금 시점 표시 (단계 시작 전 착수금 · 5단계 후 잔금) */
+.pay-5{gap:0;margin-top:64px;align-items:stretch}
+.pay-5>div:nth-of-type(n){background:linear-gradient(145deg,rgba(40,58,46,.6),rgba(16,24,19,.6))}
+.pay-5>div:nth-of-type(2),.pay-5>div:nth-of-type(4){background:linear-gradient(145deg,#2c4636,#18281e)}
+.pay-mark{position:relative;flex:0 0 2px;margin:-14px 9px 0;border-radius:2px;background:linear-gradient(var(--accent),#a9c5aa26);font-style:normal}
+.pay-mark.is-empty{background:none}
+.pay-mark:before{content:"";position:absolute;top:0;left:50%;width:8px;height:8px;border-radius:50%;transform:translate(-50%,-50%);background:var(--accent)}
+.pay-mark.is-empty:before{content:none}
+.pay-mark span{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:12px;padding:4px 10px;border-radius:9999px;background:#a9c5aa22;border:1px solid #a9c5aa55;font-size:11px;font-weight:500;color:var(--accent);white-space:nowrap}
+@media(max-width:800px){
+  .pay-5{margin-top:30px}
+  .pay-mark{flex:0 0 auto;display:flex;align-items:center;gap:10px;margin:10px 0;background:none}
+  .pay-mark:before,.pay-mark:after{content:"";position:static;flex:1;width:auto;height:1px;border-radius:0;transform:none;background:#a9c5aa55}
+  .pay-mark.is-empty{margin:4px 0}
+  .pay-mark.is-empty:after{content:none}
+  .pay-mark span{position:static;transform:none;margin:0}
+}
+@media(min-width:801px){.pay-mark{background-size:100% 20%;background-repeat:no-repeat}}
+/* 문의 STEP 1: 인스타그램 · 스레드 연결 */
+.cta-sns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:8px}
+.cta-sns-icon{width:20px;height:20px;flex:0 0 auto}
+/* 문의 카드 두 장: 버튼 크기 · 위치 맞춤 (버튼은 카드 아래쪽에 정렬) */
+.cta-option{display:flex;flex-direction:column;align-items:center}
+.cta-option .kakao-btn,.cta-sns{margin-top:auto}
+.cta-sns{margin-bottom:0;flex-wrap:nowrap;width:100%;max-width:440px}
+.cta-sns .action-glass{margin:0;flex:1;min-width:0;gap:12px;padding-left:18px}
+.cta-sns .action-glass,.cta-option .kakao-btn{min-height:78px}
+.kakao-btn{gap:14px}.kakao-icon{width:24px;height:24px}
+/* 결제 안내 문구와 5단계 표 사이 간격 */
+.pay-5{margin-top:136px}
+@media(max-width:800px){.pay-5{margin-top:30px}}
+.cta-sns .cta-sns-icon[viewBox="0 0 192 192"]{color:#fff}
+.pay-note{margin-top:20px!important}
+.pay-5+h3{margin-top:112px}
+.pay-5 .pay-phase{background:none;padding:0}
+.pay-flow{margin:40px 0 0!important}
