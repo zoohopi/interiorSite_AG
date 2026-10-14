@@ -644,3 +644,8 @@ br.mo{display:none}
 @media(max-width:800px){br.mo,br.all{display:inline!important}br.pc{display:none!important}}
 /* 휴대폰: 공간 투어 왼쪽 아래 장면 번호(01 / 07 · …) 숨김 */
 @media(max-width:800px){#position{display:none}}
+/* 휴대폰 세로: 글씨 뒤 그라데이션 없이, 사진 아래 검은 바탕에 텍스트 */
+@media(max-width:700px) and (orientation:portrait){
+  #journey .shade{display:none}
+  #journey .caption{top:calc(42% + 46.875vw + 4px);bottom:auto}
+}
