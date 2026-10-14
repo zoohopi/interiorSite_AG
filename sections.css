@@ -721,3 +721,10 @@ br.mo{display:none}
   #journey .bottom{flex-direction:column;align-items:center;gap:8px;top:calc(42% - 46.875vw - 86px)}
   #journey .bottom:before{content:"남산장어";font-size:15px;font-weight:600;letter-spacing:.02em;color:#fff}
 }
+/* 휴대폰: 상단 '다음 이야기로 건너뛰기' 대신 숫자 막대 끝의 '건너뛰기' 버튼 */
+#stops .stop-skip{display:none}
+@media(max-width:700px) and (orientation:portrait){
+  #journey .skip-tour{display:none}
+  #stops .stop-skip{display:flex}
+  #stops .stop-skip:before{color:#fff;font-weight:600}
+}

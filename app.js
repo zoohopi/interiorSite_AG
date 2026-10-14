@@ -289,6 +289,10 @@ addEventListener('keydown',event=>{
   if(['ArrowDown','PageDown',' '].includes(event.key)&&tourHandles(true)){event.preventDefault();step(true);}
   if(['ArrowUp','PageUp'].includes(event.key)&&tourHandles(false)){event.preventDefault();step(false);}
 });
+// 휴대폰: 숫자 막대 7번 옆에 '건너뛰기'(다음 이야기로) 버튼
+const skipStop=document.createElement('button');skipStop.type='button';skipStop.className='stop-skip';skipStop.dataset.num='건너뛰기';skipStop.setAttribute('aria-label','다음 이야기로 건너뛰기');
+skipStop.addEventListener('click',()=>$('.skip-tour').click());
+$('#stops').append(skipStop);
 $('.skip-tour').addEventListener('click',event=>{
   event.preventDefault();
   snapToken++; cancelAnimationFrame(snapFrame); snapping=false;
