@@ -706,3 +706,18 @@ br.mo{display:none}
   .pay-5 .pay-mark:after{content:none}
   .pay-5 .pay-mark span:before{content:"← ";color:var(--accent)}
 }
+/* 휴대폰 세로: 장면 막대(1~7)를 사진 위쪽으로, 상단 '아그디자인 / 남산장어 공간을 걷다' 숨김, 건너뛰기만 오른쪽 위 */
+@media(max-width:700px) and (orientation:portrait){
+  #journey .top .top-brand,#journey .top>span{display:none}
+  #journey .top{justify-content:flex-end}
+  #journey .skip-tour{position:static}
+  #journey .bottom{top:calc(42% - 46.875vw - 58px);bottom:auto;justify-content:center}
+}
+/* 상단 메뉴: 히어로에서는 배경 없음(영상이 보이게), 그 아래부터 검정 배경 */
+.site-nav{background:transparent;transition:transform .35s ease,background-color .3s}
+.site-nav.is-solid{background:#0b0d0c}
+/* 휴대폰 세로: 장면 숫자 막대 위에 '남산장어' */
+@media(max-width:700px) and (orientation:portrait){
+  #journey .bottom{flex-direction:column;align-items:center;gap:8px;top:calc(42% - 46.875vw - 86px)}
+  #journey .bottom:before{content:"남산장어";font-size:15px;font-weight:600;letter-spacing:.02em;color:#fff}
+}

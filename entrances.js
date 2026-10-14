@@ -110,7 +110,9 @@ if (matchMedia('(hover: none)').matches) {
     queued = false;
     const y = scrollY, top = journey.offsetTop, end = top + journey.offsetHeight - innerHeight;
     header.classList.toggle('is-hidden', y >= top - 2 && y < end);
-    header.classList.toggle('is-solid', y > 40);
+    // 첫 히어로 화면에서는 영상이 보이도록 배경 없이, 히어로를 지나면 검정 배경
+    const hero = document.querySelector('.hero');
+    header.classList.toggle('is-solid', !hero || y > hero.offsetTop + hero.offsetHeight - header.offsetHeight);
   };
   const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
   addEventListener('scroll', queue, { passive: true });
