@@ -124,12 +124,22 @@ if (matchMedia('(hover: none)').matches) {
 (() => {
   const track = document.querySelector('.points-track');
   if (!track) return;
-  const hold = on => track.classList.toggle('is-held', on);
-  // 꾹 누르면 휴대폰이 사진 메뉴(길게 누르기)를 띄우며 터치를 취소해 다시 흘러가던 문제를 막습니다.
-  track.addEventListener('pointerdown', () => hold(true));
-  ['pointerup', 'pointercancel', 'pointerleave'].forEach(t => track.addEventListener(t, () => hold(false)));
+  // 애니메이션을 직접 멈추고 다시 재생합니다(클래스만 바꾸는 방식은 일부 휴대폰에서 적용되지 않음).
+  const hold = on => {
+    track.classList.toggle('is-held', on);
+    const keep = !on && matchMedia('(hover: hover)').matches && track.matches(':hover'); // 마우스가 올라가 있으면 계속 멈춤
+    if (track.getAnimations) track.getAnimations().forEach(a => (on || keep) ? a.pause() : a.play());
+  };
+  // 터치: 손가락을 대면 멈추고, 떼거나 화면 스크롤로 터치가 끝나면 다시 흐름
   track.addEventListener('touchstart', () => hold(true), { passive: true });
-  track.addEventListener('touchend', () => hold(false), { passive: true });
+  ['touchend', 'touchcancel'].forEach(t => track.addEventListener(t, () => hold(false), { passive: true }));
+  // 마우스: 누르고 있는 동안 멈춤(올려 두기만 해도 멈추는 것은 CSS :hover)
+  if (matchMedia('(hover: hover)').matches) { // 휴대폰은 터치 뒤 가짜 마우스 이벤트가 와서 마우스 처리는 PC에서만
+    track.addEventListener('mousedown', () => hold(true));
+    track.addEventListener('mouseup', () => hold(false));
+    track.addEventListener('mouseleave', () => { track.classList.remove('is-held'); if (track.getAnimations) track.getAnimations().forEach(a => a.play()); });
+    track.addEventListener('mouseenter', () => { if (track.getAnimations) track.getAnimations().forEach(a => a.pause()); });
+  }
   track.addEventListener('contextmenu', event => event.preventDefault());
 })();
 

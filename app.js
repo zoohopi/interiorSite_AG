@@ -60,7 +60,8 @@ const captions = scenes.map((scene,i) => {
 });
 const buttons = scenes.map((scene,i) => {
   const button = document.createElement('button'); button.setAttribute('aria-label', `${i+1}. ${scene.label}`); button.dataset.num = String(i+1);
-  button.addEventListener('click',()=> moveToStop(i));
+  // 숫자 막대: 중간 장면 영상을 거치지 않고 해당 사진으로 바로 이동
+  button.addEventListener('click',()=> moveToStop(i, 1));
   $('#stops').append(button); return button;
 });
 let activeClip = -1;

@@ -244,7 +244,7 @@ cite{display:block;margin-top:14px;font-size:13px;font-style:normal;color:var(--
 /* 매출 설계 3카드 자동 흐름 */
 .points-flow{margin:0 calc(var(--pad) * -1) 90px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .points-track{display:flex;gap:24px;width:max-content;padding-right:24px;text-align:left;animation:points-flow 40s linear infinite}
-.points-track:hover{animation-play-state:paused}
+@media(hover:hover){.points-track:hover{animation-play-state:paused}}
 .points-track article{width:min(380px,78vw);flex:0 0 auto}
 .points-track h3{font-size:23px;margin:22px 0 12px}
 .points-track p{font-size:14px;color:#9ea89f}
