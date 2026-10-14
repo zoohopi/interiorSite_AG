@@ -42,6 +42,10 @@ const captions = scenes.map((scene,i) => {
   const body = document.createElement('p'); body.textContent = scene.body;
   article.append(eyebrow,title,body);
   if(scene.detail){const detail=document.createElement('div');detail.className='detail';detail.textContent=scene.detail;article.append(detail);}
+  // 휴대폰: 제목만 보이고 '자세히 보기'를 누르면 설명이 펼쳐집니다
+  const more=document.createElement('button');more.type='button';more.className='caption-more';more.textContent='자세히 보기';more.setAttribute('aria-expanded','false');
+  more.addEventListener('click',()=>{const open=article.classList.toggle('is-open');more.textContent=open?'접기':'자세히 보기';more.setAttribute('aria-expanded',String(open));});
+  article.append(more);
   $('#captions').append(article); return article;
 });
 const buttons = scenes.map((scene,i) => {
@@ -64,6 +68,8 @@ const clips = ['01-to-02-seedance25-reference-1080p.mp4','02-to-03-4s-seedance25
 // Listeners must update the same state object used by the renderer.
 clips.forEach(clip => {
   clip.video.addEventListener('loadeddata',()=>{clip.ready=true;clip.painted=true;wake();});
+  // iOS는 재생을 시작하기 전까지 loadeddata를 보내지 않을 수 있어, 재생이 시작되면 준비된 것으로 봅니다.
+  clip.video.addEventListener('playing',()=>{clip.ready=true;clip.painted=true;wake();});
   clip.video.addEventListener('seeked',()=>{clip.painted=true;wake();});
   clip.video.addEventListener('error',()=>{clip.failed=true;wake();});
 });
@@ -96,7 +102,7 @@ const warm = stop => [stop - 1, stop, stop + 1].forEach(i => {
 const ensureReady = clip => clip.video.readyState >= 2 ? Promise.resolve() : new Promise(resolve => {
   if (clip.video.preload !== 'auto') { clip.video.preload = 'auto'; clip.video.load(); }
   clip.video.addEventListener('loadeddata', resolve, { once: true });
-  setTimeout(resolve, 1500);
+  setTimeout(resolve, 400);
 });
 // The tour starts below the hero, so timeline distances are offset by the journey's top.
 const journeyTop = () => $('#journey').offsetTop;

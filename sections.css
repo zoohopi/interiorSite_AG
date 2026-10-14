@@ -609,7 +609,36 @@ html{overflow-x:clip}
 @media(max-width:800px){.points-flow{margin-left:-16px;margin-right:-16px}}
 /* 공간 투어(세로 화면): 사진 위아래 경계를 투명 그라데이션으로 부드럽게 */
 @media(max-width:700px) and (orientation:portrait){
-  #media{-webkit-mask-image:linear-gradient(transparent,#000 10%,#000 78%,transparent);mask-image:linear-gradient(transparent,#000 10%,#000 78%,transparent)}
+  #media:after{content:"";position:absolute;inset:-1px 0;z-index:1;pointer-events:none;background:linear-gradient(#0b0d0c,transparent 10%,transparent 78%,#0b0d0c)}
 }
-/* 휴대폰: 공간 투어 첫 장면(파사드)은 제목만 표시 */
-@media(max-width:800px){#captions .caption:first-child p{display:none}}
+/* 공간 투어 설명: 휴대폰은 제목만, '자세히 보기'로 펼침 */
+.caption-more{display:none}
+@media(max-width:800px){
+  .caption:not(.is-open) p,.caption:not(.is-open) .detail{display:none}
+  .caption-more{display:inline-block;margin-top:10px;padding:7px 14px;border:1px solid #ffffff55;border-radius:9999px;background:#0b0d0c99;color:#e1e4de;font-size:12px;cursor:pointer;pointer-events:auto}
+  .caption[aria-hidden="true"] .caption-more{pointer-events:none}
+}
+/* 휴대폰 결제 5단계: 박스는 왼쪽 10% · 오른쪽 35% 여백, 오른쪽 여백에 화살표와 착수금 표시 */
+@media(max-width:800px){
+  .pay-5>div{margin:0 35% 0 10%}
+  .pay-5 .pay-mark{display:flex;align-items:center;gap:6px;margin:6px 0 6px 10%;min-height:30px}
+  .pay-5 .pay-mark.is-empty{min-height:0;margin:6px 0}
+  .pay-5 .pay-mark:before{content:"";position:static;flex:1;height:1px;width:auto;transform:none;border-radius:0;background:linear-gradient(90deg,#a9c5aa22,#a9c5aa99)}
+  .pay-5 .pay-mark:after{content:none}
+  .pay-5 .pay-mark span{flex:0 0 auto;width:calc(35% / .9 - 6px);max-width:150px;text-align:left;padding:4px 8px;font-size:10px}
+  .pay-5 .pay-mark span:before{content:"← ";color:var(--accent)}
+}
+@media(max-width:800px){.caption-more{border:0;margin-top:-3px}}
+/* 휴대폰 결제 5단계: 4·5단계 사이 선 삭제, 화살표 선 30% 길이, 박스 간격 좁힘 */
+@media(max-width:800px){
+  .pay-5 .pay-mark{justify-content:flex-end;min-height:24px;margin:2px 0 2px 10%}
+  .pay-5 .pay-mark:before{flex:0 0 calc((100% - 35% / .9) * .3)}
+  .pay-5 .pay-mark.is-empty{min-height:0;margin:8px 0}
+  .pay-5 .pay-mark.is-empty:before{content:none}
+}
+/* 리뷰 본문 양쪽 정렬 */
+.rv-text{text-align:justify}
+@media(max-width:800px){.pay-5 .pay-mark span{width:auto;max-width:none}}
+/* 줄바꿈: br.mo = 휴대폰에서만, br.pc = PC에서만, br.all = 항상 */
+br.mo{display:none}
+@media(max-width:800px){br.mo,br.all{display:inline!important}br.pc{display:none!important}}
