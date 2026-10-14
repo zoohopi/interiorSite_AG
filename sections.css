@@ -637,8 +637,10 @@ html{overflow-x:clip}
   .pay-5 .pay-mark.is-empty:before{content:none}
 }
 /* 리뷰 본문 양쪽 정렬 */
-.rv-text{text-align:justify}
+.rv-text{text-align:center}
 @media(max-width:800px){.pay-5 .pay-mark span{width:auto;max-width:none}}
 /* 줄바꿈: br.mo = 휴대폰에서만, br.pc = PC에서만, br.all = 항상 */
 br.mo{display:none}
 @media(max-width:800px){br.mo,br.all{display:inline!important}br.pc{display:none!important}}
+/* 휴대폰: 공간 투어 왼쪽 아래 장면 번호(01 / 07 · …) 숨김 */
+@media(max-width:800px){#position{display:none}}
