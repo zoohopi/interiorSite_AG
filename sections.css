@@ -728,3 +728,6 @@ br.mo{display:none}
   #stops .stop-skip{display:flex}
   #stops .stop-skip:before{color:#fff;font-weight:600}
 }
+/* 상단 메뉴 높이: 위아래 3px씩 줄임 */
+.site-nav{min-height:80px;padding-top:13px;padding-bottom:13px}
+@media(max-width:800px){.site-nav{min-height:68px;padding-top:11px;padding-bottom:11px}}
