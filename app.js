@@ -52,9 +52,10 @@ const buttons = scenes.map((scene,i) => {
 let activeClip = -1;
 let frame = 0;
 const wake = () => { if(!frame) frame = requestAnimationFrame(render); };
-const clips = ['01-to-02-seedance25-reference-1080p.mp4','02-to-03-4s-seedance25-reference-1080p.mp4','03-to-04-seedance25-reference-1080p.mp4','04-to-05-seedance25-reference-1080p-cut.mp4','05-to-06-seedance25-reference-1080p-ramp-fast.mp4','06-to-07-text-lock-2s-fade.mp4'].map(file => {
+const clips = ['01-to-02-seedance25-reference-1080p.mp4','02-to-03-4s-seedance25-reference-1080p.mp4','03-to-04-seedance25-reference-1080p.mp4','04-to-05-seedance25-reference-1080p-cut.mp4','05-to-06-seedance25-reference-1080p-ramp-fast.mp4','06-to-07-text-lock-2s-fade.mp4'].map((file, i) => {
   const video = document.createElement('video');
-  video.muted = true; video.playsInline = true; video.preload = 'auto'; video.setAttribute('aria-hidden','true');
+  // 휴대폰은 동시에 미리 불러올 수 있는 영상 수가 적어 뒤쪽 영상이 재생되지 않았습니다. 앞의 두 개만 미리 받고 나머지는 가까워질 때 받습니다.
+  video.muted = true; video.playsInline = true; video.preload = i < 2 ? 'auto' : 'metadata'; video.setAttribute('aria-hidden','true');
   $('#media').append(video);
   video.src = `previz-01/outputs/${file}`;
   video.load();
@@ -86,6 +87,17 @@ function animateScroll(to, duration, easing=ease, token=snapToken) {
     snapFrame = requestAnimationFrame(step);
   });
 }
+// 해당 장면 근처의 영상만 미리 받아 둡니다.
+const warm = stop => [stop - 1, stop, stop + 1].forEach(i => {
+  const clip = clips[i];
+  if (clip && clip.video.preload !== 'auto') { clip.video.preload = 'auto'; clip.video.load(); }
+});
+// 아직 준비되지 않은 영상은 재생 전에 잠깐(최대 1.5초) 기다립니다.
+const ensureReady = clip => clip.video.readyState >= 2 ? Promise.resolve() : new Promise(resolve => {
+  if (clip.video.preload !== 'auto') { clip.video.preload = 'auto'; clip.video.load(); }
+  clip.video.addEventListener('loadeddata', resolve, { once: true });
+  setTimeout(resolve, 1500);
+});
 // The tour starts below the hero, so timeline distances are offset by the journey's top.
 const journeyTop = () => $('#journey').offsetTop;
 // 휴대폰은 주소창이 접히고 펴질 때마다 innerHeight가 바뀌어 투어 높이가 통째로 바뀌고 화면이 튑니다.
@@ -104,6 +116,8 @@ async function travelOne(fromIndex, toIndex, token) {
     : [5042,4042,4000,4000,4000,4000][clipIndex] / PLAYBACK_RATES[clipIndex];
   if (forward) {
     if (!await animateScroll(travelStart, 380, ease, token)) return false;
+    await ensureReady(clip);
+    if (token !== snapToken) return false;
     clip.video.currentTime = 0;
     clip.video.playbackRate = PLAYBACK_RATES[clipIndex];
     playingClip = clipIndex;
@@ -134,7 +148,7 @@ async function moveToStop(index, duration) {
       currentStop = i+direction;
     }
   }
-  currentStop = index; snapping = false; wake();
+  currentStop = index; snapping = false; warm(index); wake();
 }
 // Below the last stop the page scrolls natively into the sections that follow the tour.
 const lastStop = scenes.length - 1;
@@ -244,4 +258,4 @@ $('.skip-tour').addEventListener('click',event=>{
 $('.hero-scroll').addEventListener('click',event=>{event.preventDefault();step(true);});
 reduced.addEventListener('change',wake);
 resize();
-requestAnimationFrame(()=>{ currentStop = nearestStop(); wake(); });
+requestAnimationFrame(()=>{ currentStop = nearestStop(); warm(currentStop); wake(); });

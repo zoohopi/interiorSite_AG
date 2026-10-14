@@ -57,3 +57,51 @@
   },{rootMargin:'300px'}).observe(track);
   queue();
 })();
+
+// 채팅 사진 4장: 누르면 크게 보기, 휠 · 방향키 · 좌우 쓸기로 다음 장
+(() => {
+  const thumbs = [...document.querySelectorAll('.report-album img')];
+  if (!thumbs.length) return;
+  const box = document.createElement('div');
+  box.className = 'lb'; box.hidden = true;
+  box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', '현장 사진 크게 보기');
+  box.innerHTML = '<img class="lb-img" alt=""><button type="button" class="lb-close" aria-label="닫기">×</button><button type="button" class="lb-prev" aria-label="이전 사진">‹</button><button type="button" class="lb-next" aria-label="다음 사진">›</button><span class="lb-count"></span>';
+  document.body.append(box);
+  const img = box.querySelector('.lb-img'), count = box.querySelector('.lb-count');
+  let index = 0, lastWheel = 0, startX = null, opener = null;
+  const show = i => {
+    index = (i + thumbs.length) % thumbs.length;
+    img.src = thumbs[index].src.replace(/\.jpg$/, '-lg.jpg');
+    img.alt = thumbs[index].alt;
+    count.textContent = `${index + 1} / ${thumbs.length}`;
+  };
+  const open = i => { opener = document.activeElement; show(i); box.hidden = false; document.documentElement.style.overflow = 'hidden'; box.querySelector('.lb-close').focus(); };
+  const close = () => { box.hidden = true; document.documentElement.style.overflow = ''; if (opener) opener.focus(); };
+  thumbs.forEach((t, i) => {
+    t.tabIndex = 0; t.setAttribute('role', 'button'); t.setAttribute('aria-label', `${t.alt} 크게 보기`);
+    t.addEventListener('click', () => open(i));
+    t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); } });
+  });
+  box.querySelector('.lb-close').addEventListener('click', close);
+  box.querySelector('.lb-prev').addEventListener('click', () => show(index - 1));
+  box.querySelector('.lb-next').addEventListener('click', () => show(index + 1));
+  box.addEventListener('click', e => { if (e.target === box) close(); });
+  box.addEventListener('wheel', e => {
+    e.preventDefault(); e.stopPropagation();
+    if (Math.abs(e.deltaY) < 4 || performance.now() - lastWheel < 350) return;
+    lastWheel = performance.now(); show(index + (e.deltaY > 0 ? 1 : -1));
+  }, { passive: false });
+  box.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener('touchmove', e => { e.preventDefault(); e.stopPropagation(); }, { passive: false });
+  box.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX; startX = null;
+    if (Math.abs(dx) > 40) show(index + (dx < 0 ? 1 : -1));
+  });
+  addEventListener('keydown', e => {
+    if (box.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); show(index + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); show(index - 1); }
+  }, true);
+})();
