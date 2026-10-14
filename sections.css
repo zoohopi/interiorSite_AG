@@ -649,3 +649,4 @@ br.mo{display:none}
   #journey .shade{display:none}
   #journey .caption{top:calc(42% + 46.875vw + 4px);bottom:auto}
 }
+@media(max-width:800px){#hint{display:none}}
