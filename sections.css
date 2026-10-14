@@ -692,3 +692,5 @@ br.mo{display:none}
   .pay-5 .pay-mark span{order:2}
   .pay-5 .pay-mark.is-empty:after{content:none}
 }
+/* 상담 섹션: YOUR NEXT CHAPTER와 제목 사이 간격을 PROCESS와 같게(14px) */
+.cta .eyebrow{display:block;margin-bottom:14px}

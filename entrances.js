@@ -134,3 +134,15 @@ document.querySelectorAll('video.rm-autoplay').forEach(v => {
     if (e.isIntersecting && !document.hidden) v.play().catch(() => {}); else v.pause();
   }, { threshold: .4 }).observe(v);
 });
+
+// 상단 메뉴 링크: 섹션 등장 효과(아래에서 떠오르는 이동) 때문에 도착 후 내용이 메뉴 밑으로 밀려 올라가 가려졌습니다.
+// 이동 효과를 뺀 실제 위치를 계산해, 메뉴 바로 아래에 제목(PROCESS 등)이 보이도록 멈춥니다.
+document.querySelectorAll('.site-nav nav a[href^="#"]').forEach(link => link.addEventListener('click', event => {
+  const target = document.querySelector(link.getAttribute('href'));
+  if (!target) return;
+  event.preventDefault();
+  let top = 0;
+  for (let el = target; el; el = el.offsetParent) top += el.offsetTop;
+  const nav = document.querySelector('.site-nav');
+  scrollTo(0, Math.max(0, top - (nav ? nav.offsetHeight : 0) - 24));
+}));

@@ -3,8 +3,10 @@ const clamp = n => Math.max(0, Math.min(1, n));
 const HOLD = 1.7;
 const TRAVEL = 1.65;
 const PLAYBACK_RATE = 1.65;
-// 전체 30% 빠르게. 아이폰 사파리는 2배속을 넘으면 재생이 불안정해 최대 2배속으로 제한합니다.
-const PLAYBACK_RATES = [1.75, PLAYBACK_RATE, PLAYBACK_RATE, PLAYBACK_RATE, 1.5, 1.5].map(r => Math.min(2, r * 1.3));
+// 원래 속도에서 30% → 다시 15% 빠르게(약 1.5배). 아이폰 사파리는 2배속을 넘기면 불안정해서,
+// 영상 파일 자체를 1.5배 빠르게 만들어 두고(CLIP_FILE_SPEED) 나머지만 재생 속도로 맞춥니다.
+const CLIP_FILE_SPEED = 1.5;
+const PLAYBACK_RATES = [1.75, PLAYBACK_RATE, PLAYBACK_RATE, PLAYBACK_RATE, 1.5, 1.5].map(r => Math.min(2, r * 1.3 * 1.15 / CLIP_FILE_SPEED));
 const TOTAL = HOLD * 7 + TRAVEL * 6;
 const stopPosition = i => i * (HOLD + TRAVEL) + HOLD * .62;
 function sample(distance) {
@@ -124,7 +126,7 @@ async function travelOne(fromIndex, toIndex, token) {
   const travelEnd = at((clipIndex + 1) * (HOLD + TRAVEL));
   const duration = Number.isFinite(clip.video.duration)
     ? clip.video.duration * 1000 / PLAYBACK_RATES[clipIndex]
-    : [5042,4042,4000,4000,4000,4000][clipIndex] / PLAYBACK_RATES[clipIndex];
+    : [5042,4042,4042,3708,3375,2083][clipIndex] / CLIP_FILE_SPEED / PLAYBACK_RATES[clipIndex];
   if (forward) {
     if (!await animateScroll(travelStart, 380, ease, token)) return false;
     await ensureReady(clip);
