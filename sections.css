@@ -665,3 +665,8 @@ br.mo{display:none}
 .caption .body-m{display:none}
 @media(max-width:800px){.caption .body-pc{display:none!important}.caption.is-open .body-m{display:block}}
 @media(max-width:800px){.caption .body-m{font-size:12px;line-height:1.8}}
+/* 휴대폰: '자세히 보기'로 글이 올라올 때 뒤에 어두운 투명 레이어도 함께 올라와 사진 위에서도 글이 잘 보이게 */
+@media(max-width:800px){
+  .caption:before{content:"";position:absolute;left:-50vw;right:-50vw;top:-48px;bottom:-60vh;z-index:-1;background:linear-gradient(transparent,#0b0d0ce6 48px,#0b0d0c 100%);opacity:0;transition:opacity .45s ease;pointer-events:none}
+  .caption.is-open:before{opacity:1}
+}

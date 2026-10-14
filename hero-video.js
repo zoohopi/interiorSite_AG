@@ -18,11 +18,11 @@
     if (paused || !visible || document.hidden) video.pause();
     else video.play().catch(retryOnTouch);
   };
-  // 갤럭시 절전 모드 등에서 자동재생이 막히면 첫 터치 때 다시 재생합니다.
+  // 카카오톡 같은 앱 안 브라우저나 절전 모드에서 자동재생이 막히면 첫 터치 때 다시 재생합니다.
   function retryOnTouch() {
-    const go = () => { removeEventListener('touchstart', go); removeEventListener('click', go); sync(); };
-    addEventListener('touchstart', go, { once: true, passive: true });
-    addEventListener('click', go, { once: true });
+    // touchstart는 브라우저가 '사용자 동작'으로 인정하지 않아 touchend/click에서 재생합니다.
+    const go = () => { ['touchend','click','keydown'].forEach(t => removeEventListener(t, go)); sync(); };
+    ['touchend','click','keydown'].forEach(t => addEventListener(t, go, { passive: true }));
   }
   video.addEventListener('loadeddata', sync);
   document.addEventListener('visibilitychange', sync);

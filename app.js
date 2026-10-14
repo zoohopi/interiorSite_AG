@@ -260,10 +260,11 @@ addEventListener('touchmove',event=>{
 addEventListener('touchend',()=>{ touchY = null; },{passive:true});
 // 일부 안드로이드(절전 모드 등)는 사용자 터치 없이 영상 재생을 막습니다. 첫 터치 때 투어 영상을 한 번씩 재생·정지해 재생 권한을 받아 둡니다.
 let clipsUnlocked = false;
-addEventListener('touchend',()=>{
+const unlockClips = () => {
   if (clipsUnlocked) return; clipsUnlocked = true;
   clips.forEach((c, i) => { if (!c.video.paused) return; const p = c.video.play(); if (p) p.then(()=>{ if (playingClip !== i) c.video.pause(); }).catch(()=>{}); });
-},{passive:true});
+};
+['touchend','click','keydown'].forEach(t => addEventListener(t, unlockClips, { passive: true }));
 addEventListener('keydown',event=>{
   if(['ArrowDown','PageDown',' '].includes(event.key)&&tourHandles(true)){event.preventDefault();step(true);}
   if(['ArrowUp','PageUp'].includes(event.key)&&tourHandles(false)){event.preventDefault();step(false);}
