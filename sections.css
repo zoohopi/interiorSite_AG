@@ -670,3 +670,5 @@ br.mo{display:none}
   .caption:before{content:"";position:absolute;left:-50vw;right:-50vw;top:-48px;bottom:-60vh;z-index:-1;background:linear-gradient(transparent,#0b0d0ce6 48px,#0b0d0c 100%);opacity:0;transition:opacity .45s ease;pointer-events:none}
   .caption.is-open:before{opacity:1}
 }
+/* 휴대폰: 펼친 설명과 그 뒤 레이어가 사진 경계 그라데이션보다 위에 오도록 */
+@media(max-width:800px){#journey .caption{z-index:2}}
