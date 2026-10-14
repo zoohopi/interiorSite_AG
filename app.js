@@ -88,7 +88,11 @@ function animateScroll(to, duration, easing=ease, token=snapToken) {
 }
 // The tour starts below the hero, so timeline distances are offset by the journey's top.
 const journeyTop = () => $('#journey').offsetTop;
-const at = distance => journeyTop() + distance * innerHeight;
+// 휴대폰은 주소창이 접히고 펴질 때마다 innerHeight가 바뀌어 투어 높이가 통째로 바뀌고 화면이 튑니다.
+// 터치 기기에서는 가로 폭이 바뀔 때(회전)만 기준 높이를 새로 잡습니다.
+const coarse = matchMedia('(pointer: coarse)').matches;
+let vh = innerHeight, lastWidth = innerWidth;
+const at = distance => journeyTop() + distance * vh;
 async function travelOne(fromIndex, toIndex, token) {
   const forward = toIndex > fromIndex;
   const clipIndex = forward ? fromIndex : toIndex;
@@ -134,7 +138,7 @@ async function moveToStop(index, duration) {
 }
 // Below the last stop the page scrolls natively into the sections that follow the tour.
 const lastStop = scenes.length - 1;
-const nearestStop = () => Math.max(0, Math.min(lastStop, Math.round(((scrollY - journeyTop())/innerHeight - stopPosition(0))/(HOLD+TRAVEL))));
+const nearestStop = () => Math.max(0, Math.min(lastStop, Math.round(((scrollY - journeyTop())/vh - stopPosition(0))/(HOLD+TRAVEL))));
 const inHero = () => scrollY < journeyTop() - 2;
 // Hero quote reveals one line per scroll step before the tour starts.
 const heroQuote = $(".hero-quote");
@@ -176,7 +180,7 @@ function onWheel(event) {
 }
 function render(){
   frame=0;
-  const distance=(scrollY - journeyTop())/innerHeight;
+  const distance=(scrollY - journeyTop())/vh;
   const state=sample(distance);
   const traveling=state.kind==='travel'&&!reduced.matches;
   const visibleScene=state.kind==='travel'&&state.t>=.5?state.scene+1:state.scene;
@@ -210,9 +214,23 @@ function render(){
   $('#status').textContent=reduced.matches?'':clips.some(c=>c.failed)?'영상을 불러오지 못해 사진으로 표시합니다. 새로고침해주세요.':clips.every(c=>c.ready)?'':'영상을 준비하고 있습니다';
   $('.stage').dataset.segment=state.kind;$('.stage').dataset.scene=String(visibleScene+1);
 }
-function resize(){ $('#journey').style.height=`${(TOTAL+1)*innerHeight}px`;wake(); }
+function resize(){
+  if (!coarse || innerWidth !== lastWidth) { vh = innerHeight; lastWidth = innerWidth; }
+  $('#journey').style.height=`${(TOTAL+1)*vh}px`;wake();
+}
 addEventListener('scroll',wake,{passive:true});addEventListener('resize',resize);
 addEventListener('wheel',onWheel,{passive:false});
+// 터치: 한 번 쓸어내리면 휠 한 칸과 같이 한 단계(히어로 문장 한 줄 · 다음 장면)씩 이동
+let touchY = null, touchFired = false;
+addEventListener('touchstart',event=>{ touchY = event.touches.length === 1 ? event.touches[0].clientY : null; touchFired = false; },{passive:true});
+addEventListener('touchmove',event=>{
+  if (touchY === null) return;
+  const dy = touchY - event.touches[0].clientY;
+  if (Math.abs(dy) < 2 || !tourHandles(dy > 0)) return;
+  event.preventDefault();
+  if (!touchFired && Math.abs(dy) > 24) { touchFired = true; step(dy > 0); }
+},{passive:false});
+addEventListener('touchend',()=>{ touchY = null; },{passive:true});
 addEventListener('keydown',event=>{
   if(['ArrowDown','PageDown',' '].includes(event.key)&&tourHandles(true)){event.preventDefault();step(true);}
   if(['ArrowUp','PageUp'].includes(event.key)&&tourHandles(false)){event.preventDefault();step(false);}

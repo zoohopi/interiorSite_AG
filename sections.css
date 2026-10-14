@@ -564,3 +564,44 @@ html{scroll-padding-top:0}
 .cta-option .action-glass .action-arrow{width:37px;height:37px;font-size:18px}
 .cta-option .cta-sns-icon{width:16px;height:16px}
 .cta-option .kakao-icon{width:19px;height:19px}
+
+/* ───────── 휴대폰 최적화 ───────── */
+/* 공간 투어: 세로 화면에서 사진이 가로 폭의 약 3/5까지 보이도록 미디어 영역을 줄임 */
+@media(max-width:700px) and (orientation:portrait){
+  #media{top:calc(42% - 46.875vw);bottom:auto;height:93.75vw}
+}
+@media(max-width:800px){
+  /* 히어로 문구: 세 줄로 */
+  .hero-sub br{display:inline}
+  .hero-sub,.hero-tag{font-size:15px;line-height:2}
+  .hero-sub{margin-top:32px}
+  /* 경력 박스 3개 가로 정렬 */
+  .career{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .career .card{padding:18px 6px}
+  .career b{font-size:11px;line-height:1.4}
+  .career strong{font-size:34px}
+  .career small{font-size:13px;margin-left:3px}
+  .career .card>span{font-size:10px}
+  /* 결제 5단계: 1~3단계 한 줄, 4~5단계 한 줄 (입금 표시는 카드 위·아래) */
+  .pay-5{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:8px;row-gap:6px}
+  .pay-5>div{padding:16px 6px}
+  .pay-5 b{font-size:20px}
+  .pay-5>div>span{font-size:11px}
+  .pay-5 .pay-phase li{padding:5px 2px;font-size:10px}
+  .pay-5 .pay-mark{display:flex;flex-direction:column;align-items:center;gap:4px;margin:0}
+  .pay-5 .pay-mark:before{content:none}
+  .pay-5 .pay-mark:after{content:"";flex:none;width:1px;height:10px;background:#a9c5aa88}
+  .pay-5 .pay-mark span{padding:3px 8px;font-size:10px}
+  .pay-5>i:nth-of-type(1){grid-area:1/1}.pay-5>i:nth-of-type(2){grid-area:1/2}.pay-5>i:nth-of-type(3){grid-area:1/3}
+  .pay-5>i:nth-of-type(4){grid-area:3/1;margin-top:14px}.pay-5>i:nth-of-type(5){display:none}
+  .pay-5>i:nth-of-type(6){grid-area:5/2;flex-direction:column-reverse}
+  .pay-5>div:nth-of-type(1){grid-area:2/1}.pay-5>div:nth-of-type(2){grid-area:2/2}.pay-5>div:nth-of-type(3){grid-area:2/3}
+  .pay-5>div:nth-of-type(4){grid-area:4/1}.pay-5>div:nth-of-type(5){grid-area:4/2}
+  /* 착공 흐름: 한 줄로 */
+  .pay-flow{flex-wrap:nowrap;gap:4px}
+  .pay-flow span,.pay-flow strong{padding:6px 8px;font-size:11px;white-space:nowrap}
+  .pay-flow i{font-size:10px}
+  /* 리뷰 카드: 한 장씩 */
+  .rv-track{grid-auto-columns:100%}
+  .as-row{grid-template-columns:minmax(0,1fr)}
+}
