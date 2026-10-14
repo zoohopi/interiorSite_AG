@@ -31,11 +31,11 @@
     track.classList.toggle('is-animated', active);
     const p = active ? clamp(-rect.top / Math.max(1,track.offsetHeight-stage.offsetHeight)) : 0;
     // 구간에 들어서면 한 번에 최대 크기로 (전환 애니메이션은 CSS transition)
-    const b = active && p >= .10 && p < .90 ? 1 : 0;
+    const b = active && p >= .12 && p < .55 ? 1 : 0;
     expand(film,b,(video.videoWidth/video.videoHeight)||16/9);
     shade.style.opacity = String(b);
-    cue.textContent = !active ? '' : b > .5 ? '현장 영상 · 소리는 영상 컨트롤에서 켜주세요' : p > .9 ? '' : '스크롤하며 오늘의 현장을 확인하세요 ↓';
-    const shouldPlay = active && p >= .10 && p < .9 && !document.hidden;
+    cue.textContent = !active ? '' : b > .5 ? '현장 영상 · 소리는 영상 컨트롤에서 켜주세요' : p >= .55 ? '' : '스크롤하며 오늘의 현장을 확인하세요 ↓';
+    const shouldPlay = active && p >= .12 && p < .55 && !document.hidden;
     if (shouldPlay !== inVideo) {
       inVideo = shouldPlay;
       if (shouldPlay) video.play().catch(() => { play.hidden = false; });

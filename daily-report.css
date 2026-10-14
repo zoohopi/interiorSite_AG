@@ -65,3 +65,5 @@
 .lb-prev{left:14px;top:50%;transform:translateY(-50%)}
 .lb-next{right:14px;top:50%;transform:translateY(-50%)}
 .lb-count{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;color:#d6ddd6}
+/* 영상 확대 구간을 짧게: 확대 후 조금만 더 내리면 바로 다음으로 */
+.report-scroll.is-animated{height:300svh}

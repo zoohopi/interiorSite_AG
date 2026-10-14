@@ -20,13 +20,13 @@ function sample(distance) {
 }
 
 const scenes = [
-  { label:'파사드', title:'강렬한 첫인상으로 발걸음을 잡습니다.', body:'비슷한 간판과 평범한 매장들 사이에서 브랜드만의 첫인상은 중요한 경쟁력이 됩니다.\n원목 우드슬랩 간판과 따뜻한 조명으로 시선을 사로잡고, 자연스럽게 발걸음을 이끄는 파사드를 완성했습니다.' },
-  { label:'입구 오브제', title:'오브제에 브랜드 정체성을 담았습니다.', body:'생(生)·죽(竹)·석(石)·월(月). 자연의 네 가지 요소로 남산장어만의 정체성을 표현했습니다.\n자연 속에서 풍류를 즐기던 선비의 정취가 느껴지는 공간으로 완성했습니다.', detail:'生 살아 있는 장어  ·  竹 사군자의 대나무\n石 도시와 매장을 잇는 자연석  ·  月 달빛을 형상화한 원형 조명' },
-  { label:'입구 어항', title:'브랜드의 철학을 공간에 새겼습니다.', body:'생물장어와 삼미 크기의 원물을 고집하는 주인장의 철학을 자연 소재와 디자인 요소로 표현했습니다.\n입구에서부터 브랜드의 이야기를 눈으로 경험할 수 있도록, 평범한 어항을 하나의 콘텐츠로 풀어냈습니다.' },
-  { label:'요소의 레이어', title:'요소 간의 조화를 통해 공간의 온도를 높였습니다.', body:'스톤 패턴의 바닥과 직선적인 우드 텍스처 위에 따뜻한 색온도의 조명을 더해 각 요소를 자연스럽게 연결했습니다.\n서로 다른 소재와 빛이 어우러져 편안하면서도 고급스러운 공간을 완성했습니다.' },
-  { label:'아트월', title:'브랜드를 상징하는 조형을 설계했습니다.', body:'생물장어의 유연한 움직임과 역동성을 부드러운 곡선과 거친 질감의 아트월로 표현했습니다.\n직선적인 공간 속 대비되는 곡선의 조형미를 통해 시선을 끌고, 브랜드를 기억하게 하는 상징적인 포인트를 완성했습니다.' },
-  { label:'공간 속 또 하나의 파사드', title:'조리 과정도 하나의 콘텐츠로 설계했습니다.', body:'주방을 오픈형 무대로 구성해 조리 과정을 고객이 직접 보고 즐길 수 있도록 했습니다.\n조리사의 움직임이 하나의 퍼포먼스가 되어 음식에 대한 신뢰와 기대감을 높이는 공간으로 완성했습니다.' },
-  { label:'포인트 월', title:'작은 요소도 의도를 갖고 연출했습니다.', body:'익숙한 메뉴판을 브랜드의 개성이 드러나는 대형 간판으로 재해석했습니다.\n우드 소재와 기울어진 입체적 구성을 활용해 시각적인 포인트를 만들고, 조리 공간에도 브랜드의 정체성이 자연스럽게 이어지도록 설계했습니다.' },
+  { label:'파사드', title:'강렬한 첫인상으로 발걸음을 잡습니다.', body:'비슷한 간판과 평범한 매장들 사이에서 브랜드만의 첫인상은 중요한 경쟁력이 됩니다.\n원목 우드슬랩 간판과 따뜻한 조명으로 시선을 사로잡고, 자연스럽게 발걸음을 이끄는 파사드를 완성했습니다.', mbody:'비슷한 간판과 평범한 매장들 사이에서\n브랜드만의 첫인상은 중요한 경쟁력이 됩니다.\n원목 우드슬랩 간판과 따뜻한 조명으로 시선을 사로잡고,\n자연스럽게 발걸음을 이끄는 파사드를 완성했습니다.' },
+  { label:'입구 오브제', title:'오브제에 브랜드 정체성을 담았습니다.', body:'생(生)·죽(竹)·석(石)·월(月). 자연의 네 가지 요소로 남산장어만의 정체성을 표현했습니다.\n자연 속에서 풍류를 즐기던 선비의 정취가 느껴지는 공간으로 완성했습니다.', detail:'生 살아 있는 장어  ·  竹 사군자의 대나무\n石 도시와 매장을 잇는 자연석  ·  月 달빛을 형상화한 원형 조명', mbody:'생(生)·죽(竹)·석(石)·월(月)\n자연의 네 가지 요소로 남산장어만의 정체성을 표현했습니다.\n자연 속에서 풍류를 즐기던 선비의 정취가\n느껴지는 공간으로 완성했습니다.' },
+  { label:'입구 어항', title:'브랜드의 철학을 공간에 새겼습니다.', body:'생물장어와 삼미 크기의 원물을 고집하는 주인장의 철학을 자연 소재와 디자인 요소로 표현했습니다.\n입구에서부터 브랜드의 이야기를 눈으로 경험할 수 있도록, 평범한 어항을 하나의 콘텐츠로 풀어냈습니다.', mbody:'생물장어와 삼미 크기의 원물을 고집하는 주인장의\n철학을 자연 소재와 디자인 요소로 표현했습니다.\n입구에서부터 브랜드의 이야기를 눈으로 경험할 수 있도록,\n평범한 어항을 하나의 콘텐츠로 풀어냈습니다.' },
+  { label:'요소의 레이어', title:'요소 간의 조화를 통해 공간의 온도를 높였습니다.', body:'스톤 패턴의 바닥과 직선적인 우드 텍스처 위에 따뜻한 색온도의 조명을 더해 각 요소를 자연스럽게 연결했습니다.\n서로 다른 소재와 빛이 어우러져 편안하면서도 고급스러운 공간을 완성했습니다.', mbody:'스톤 패턴의 바닥과 직선적인 우드 텍스처 위에\n따뜻한 색온도의 조명을 더해 각 요소를 자연스럽게 연결했습니다.\n서로 다른 소재와 빛이 어우러져 편안하면서도\n고급스러운 공간을 완성했습니다.' },
+  { label:'아트월', title:'브랜드를 상징하는 조형을 설계했습니다.', body:'생물장어의 유연한 움직임과 역동성을 부드러운 곡선과 거친 질감의 아트월로 표현했습니다.\n직선적인 공간 속 대비되는 곡선의 조형미를 통해 시선을 끌고, 브랜드를 기억하게 하는 상징적인 포인트를 완성했습니다.', mbody:'생물장어의 유연한 움직임과 역동성을 부드러운 곡선과\n거친 질감의 아트월로 표현했습니다.\n직선적인 공간 속 대비되는 곡선의 조형미를 통해 시선을 끌고\n브랜드를 기억하게 하는 상징적인 포인트를 완성했습니다.' },
+  { label:'공간 속 또 하나의 파사드', title:'조리 과정도 하나의 콘텐츠로 설계했습니다.', body:'주방을 오픈형 무대로 구성해 조리 과정을 고객이 직접 보고 즐길 수 있도록 했습니다.\n조리사의 움직임이 하나의 퍼포먼스가 되어 음식에 대한 신뢰와 기대감을 높이는 공간으로 완성했습니다.', mbody:'주방을 오픈형 무대로 구성해 조리 과정을 고객이 직접\n보고 즐길 수 있도록 했습니다.\n조리사의 움직임이 하나의 퍼포먼스가 되어 음식에 대한 신뢰와\n기대감을 높이는 공간으로 완성했습니다.' },
+  { label:'포인트 월', title:'작은 요소도 의도를 갖고 연출했습니다.', body:'익숙한 메뉴판을 브랜드의 개성이 드러나는 대형 간판으로 재해석했습니다.\n우드 소재와 기울어진 입체적 구성을 활용해 시각적인 포인트를 만들고, 조리 공간에도 브랜드의 정체성이 자연스럽게 이어지도록 설계했습니다.', mbody:'익숙한 메뉴판을 브랜드의 개성이 드러나는 대형 간판으로 재해석했습니다.\n우드 소재와 기울어진 입체적 구성을 활용해 시각적인 포인트를 만들고\n조리공간에도 브랜드의 정체성이 자연스럽게 이어지도록 설계했습니다.' },
 ];
 const $ = s => document.querySelector(s);
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -40,11 +40,18 @@ const captions = scenes.map((scene,i) => {
   const eyebrow = document.createElement('div'); eyebrow.className = 'eyebrow'; eyebrow.textContent = `0${i+1} / ${scene.label}`;
   const title = document.createElement(i ? 'h2' : 'h1'); title.textContent = scene.title;
   const body = document.createElement('p'); body.textContent = scene.body;
-  article.append(eyebrow,title,body);
+  // 휴대폰 전용 줄바꿈 본문(있으면 휴대폰에서는 이것만 보임)
+  let mbody=null; if(scene.mbody){ body.className='body-pc'; mbody=document.createElement('p'); mbody.className='body-m'; mbody.textContent=scene.mbody; }
+  article.append(eyebrow,title,body); if(mbody) article.append(mbody);
   if(scene.detail){const detail=document.createElement('div');detail.className='detail';detail.textContent=scene.detail;article.append(detail);}
   // 휴대폰: 제목만 보이고 '자세히 보기'를 누르면 설명이 펼쳐집니다
   const more=document.createElement('button');more.type='button';more.className='caption-more';more.textContent='자세히 보기';more.setAttribute('aria-expanded','false');
-  more.addEventListener('click',()=>{const open=article.classList.toggle('is-open');more.textContent=open?'접기':'자세히 보기';more.setAttribute('aria-expanded',String(open));});
+  more.addEventListener('click',()=>{
+    const open=article.classList.toggle('is-open');more.textContent=open?'접기':'자세히 보기';more.setAttribute('aria-expanded',String(open));
+    // 펼친 설명이 화면 아래로 넘치면 그만큼 글 전체를 위로 밀어 올립니다(사진 아랫부분은 가려져도 됨)
+    article.style.setProperty('--lift','0px');
+    if(open){const limit=$('.stage').getBoundingClientRect().bottom-40;const over=article.getBoundingClientRect().bottom-limit;if(over>0)article.style.setProperty('--lift',`${Math.ceil(over)}px`);}
+  });
   article.append(more);
   $('#captions').append(article); return article;
 });
@@ -251,6 +258,12 @@ addEventListener('touchmove',event=>{
   if (!touchFired && Math.abs(dy) > 24) { touchFired = true; step(dy > 0); }
 },{passive:false});
 addEventListener('touchend',()=>{ touchY = null; },{passive:true});
+// 일부 안드로이드(절전 모드 등)는 사용자 터치 없이 영상 재생을 막습니다. 첫 터치 때 투어 영상을 한 번씩 재생·정지해 재생 권한을 받아 둡니다.
+let clipsUnlocked = false;
+addEventListener('touchend',()=>{
+  if (clipsUnlocked) return; clipsUnlocked = true;
+  clips.forEach((c, i) => { if (!c.video.paused) return; const p = c.video.play(); if (p) p.then(()=>{ if (playingClip !== i) c.video.pause(); }).catch(()=>{}); });
+},{passive:true});
 addEventListener('keydown',event=>{
   if(['ArrowDown','PageDown',' '].includes(event.key)&&tourHandles(true)){event.preventDefault();step(true);}
   if(['ArrowUp','PageUp'].includes(event.key)&&tourHandles(false)){event.preventDefault();step(false);}
