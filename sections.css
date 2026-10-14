@@ -650,8 +650,6 @@ br.mo{display:none}
   #journey .caption{top:calc(42% + 46.875vw + 4px);bottom:auto}
 }
 @media(max-width:800px){#hint{display:none}}
-/* 공간 투어 하단 장면 표시(7개 막대) 숨김 */
-#stops{display:none}
 /* 휴대폰: '자세히 보기'를 누르면 글 전체가 위로 부드럽게 올라가고 설명이 나타남 */
 @media(max-width:700px) and (orientation:portrait){
   #journey .caption{top:calc(42% + 46.875vw + 4px - var(--lift,0px));transition:top .45s cubic-bezier(.22,1,.36,1)}
@@ -694,3 +692,17 @@ br.mo{display:none}
 }
 /* 상담 섹션: YOUR NEXT CHAPTER와 제목 사이 간격을 PROCESS와 같게(14px) */
 .cta .eyebrow{display:block;margin-bottom:14px}
+/* 공간 투어 하단 장면 막대: 막대 위에 1~7 숫자, 누르면 해당 장면으로 이동 */
+#stops{z-index:4}
+#stops button{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:6px 4px 12px}
+#stops button:before{content:attr(data-num);font-size:11px;line-height:1;color:#ffffff80;transition:color .2s}
+#stops button[aria-current=true]:before{color:#fff;font-weight:600}
+@media(max-width:800px){#stops{position:static;transform:none;margin:0 auto;gap:8px}#stops button:after{width:22px}}
+/* 매출 설계 카드: 휴대폰에서 꾹 누를 때 사진 메뉴 · 선택이 뜨지 않게 */
+.points-track,.points-track img{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.points-track img{-webkit-user-drag:none;pointer-events:none}
+/* 휴대폰 결제 5단계: 화살표를 다시 표시 상자 안 · 글자 왼쪽으로 (막대 → [← 착수금]) */
+@media(max-width:800px){
+  .pay-5 .pay-mark:after{content:none}
+  .pay-5 .pay-mark span:before{content:"← ";color:var(--accent)}
+}

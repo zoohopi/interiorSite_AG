@@ -123,8 +123,12 @@ if (matchMedia('(hover: none)').matches) {
   const track = document.querySelector('.points-track');
   if (!track) return;
   const hold = on => track.classList.toggle('is-held', on);
+  // 꾹 누르면 휴대폰이 사진 메뉴(길게 누르기)를 띄우며 터치를 취소해 다시 흘러가던 문제를 막습니다.
+  track.addEventListener('pointerdown', () => hold(true));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(t => track.addEventListener(t, () => hold(false)));
   track.addEventListener('touchstart', () => hold(true), { passive: true });
-  ['touchend', 'touchcancel'].forEach(t => track.addEventListener(t, () => hold(false), { passive: true }));
+  track.addEventListener('touchend', () => hold(false), { passive: true });
+  track.addEventListener('contextmenu', event => event.preventDefault());
 })();
 
 // 진행 절차 영상(착공): 소리 없이 화면에 보이면 자동 재생, 벗어나면 정지

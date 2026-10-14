@@ -59,7 +59,7 @@ const captions = scenes.map((scene,i) => {
   $('#captions').append(article); return article;
 });
 const buttons = scenes.map((scene,i) => {
-  const button = document.createElement('button'); button.setAttribute('aria-label', `${i+1}. ${scene.label}`);
+  const button = document.createElement('button'); button.setAttribute('aria-label', `${i+1}. ${scene.label}`); button.dataset.num = String(i+1);
   button.addEventListener('click',()=> moveToStop(i));
   $('#stops').append(button); return button;
 });
@@ -247,19 +247,31 @@ function resize(){
 }
 addEventListener('scroll',wake,{passive:true});
 // 투어 아래(FROM SPACE TO PROMISE)에서 위로 올릴 때만 브레이크:
-// 빠르게 올리다 투어 7번 장면으로 확 빨려 들어가 영상이 다시 재생되는 것을 막습니다.
-// 첫 위쪽 스크롤은 섹션 맨 위에서 0.9초 멈추고, 그 뒤에 다시 올리면 투어로 들어갑니다. 내릴 때는 그대로.
-let lastScrollY = scrollY, brakeArmed = true, brakeUntil = 0;
+// 세게 올려도 섹션 맨 위에서 딱 멈추고, 남은 관성(손가락을 뗀 뒤 미끄러지는 스크롤)은 버립니다.
+// 멈춘 뒤 손가락을 다시 대고(또는 휠을 다시 굴려) 올리면 그때 투어로 들어갑니다. 내릴 때는 그대로.
+let lastScrollY = scrollY, brakeArmed = true, braking = false, lastScrollAt = 0, lastWheelAt = 0;
+const brakeLine = () => $('#concerns').offsetTop;
+const inBrakeZone = y => y < brakeLine() - 1 && y > at(stopPosition(lastStop)) + 2;
 addEventListener('scroll', () => {
-  const y = scrollY, up = y < lastScrollY; lastScrollY = y;
+  const y = scrollY, up = y < lastScrollY; lastScrollY = y; lastScrollAt = performance.now();
   if (snapping) return;
-  const boundary = $('#concerns').offsetTop;
-  if (y >= boundary + innerHeight * .5) brakeArmed = true;
-  if (!up || y >= boundary - 1 || y <= at(stopPosition(lastStop)) + 2) return;
-  const now = performance.now();
-  if (brakeArmed) { brakeArmed = false; brakeUntil = now + 900; }
-  if (now < brakeUntil) { scrollTo(0, boundary); lastScrollY = boundary; }
-},{passive:true});addEventListener('resize',resize);
+  if (y >= brakeLine() + innerHeight * .5) { brakeArmed = true; braking = false; }
+  if (!up || !inBrakeZone(y)) return;
+  if (brakeArmed) { brakeArmed = false; braking = true; }
+  if (braking) { scrollTo(0, brakeLine()); lastScrollY = brakeLine(); }
+},{passive:true});
+// 새 터치: 스크롤이 멈춘 뒤에 시작한 터치라면 브레이크를 풉니다(관성 중 터치는 그대로 막음)
+addEventListener('touchstart', () => { if (braking && performance.now() - lastScrollAt > 150) braking = false; }, {passive:true});
+addEventListener('touchmove', event => {
+  if (braking && scrollY <= brakeLine() + 2 && touchY !== null && event.touches[0].clientY > touchY) event.preventDefault();
+}, {passive:false});
+// 휠: 연속으로 들어오는 관성 휠은 막고, 0.3초 이상 쉬었다가 다시 굴리면 브레이크를 풉니다
+addEventListener('wheel', event => {
+  const now = performance.now(), fresh = now - lastWheelAt > 300; lastWheelAt = now;
+  if (!braking) return;
+  if (fresh) { braking = false; return; }
+  if (event.deltaY < 0 && scrollY <= brakeLine() + 2) event.preventDefault();
+}, {passive:false, capture:true});addEventListener('resize',resize);
 addEventListener('wheel',onWheel,{passive:false});
 // 터치: 한 번 쓸어내리면 휠 한 칸과 같이 한 단계(히어로 문장 한 줄 · 다음 장면)씩 이동
 let touchY = null, touchFired = false;

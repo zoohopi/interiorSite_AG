@@ -58,9 +58,9 @@
   },{rootMargin:'300px'}).observe(track);
   new IntersectionObserver(entries => {
     const e = entries[0];
-    if (e.isIntersecting && e.intersectionRatio >= .5 && !document.hidden) video.play().catch(() => { play.hidden = false; });
+    if (e.isIntersecting && e.intersectionRatio >= .25 && !document.hidden) video.play().catch(() => { play.hidden = false; });
     else if (!video.paused) video.pause();
-  }, { threshold: [0, .5, 1] }).observe(film);
+  }, { threshold: [0, .25, 1] }).observe(film);
   queue();
 })();
 
