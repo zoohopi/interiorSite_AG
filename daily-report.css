@@ -57,7 +57,7 @@
 @media(max-height:760px){.is-animated .report-album{width:116px}}
 /* 채팅 사진 크게 보기 */
 .report-album img{cursor:zoom-in}
-.lb{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:56px 16px;background:#050806ee}
+.lb{position:fixed;inset:0;z-index:1100;display:grid;place-items:center;padding:56px 16px;background:#050806ee}
 .lb[hidden]{display:none}
 .lb-img{max-width:min(1100px,100%);max-height:100%;border-radius:10px;box-shadow:0 20px 70px #000a}
 .lb button{position:absolute;display:grid;place-items:center;width:46px;height:46px;border:1px solid #ffffff40;border-radius:9999px;background:#0b0d0ccc;color:#fff;font-size:26px;line-height:1;cursor:pointer}

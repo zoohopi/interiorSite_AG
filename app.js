@@ -3,7 +3,8 @@ const clamp = n => Math.max(0, Math.min(1, n));
 const HOLD = 1.7;
 const TRAVEL = 1.65;
 const PLAYBACK_RATE = 1.65;
-const PLAYBACK_RATES = [1.75, PLAYBACK_RATE, PLAYBACK_RATE, PLAYBACK_RATE, 1.5, 1.5];
+// 전체 30% 빠르게. 아이폰 사파리는 2배속을 넘으면 재생이 불안정해 최대 2배속으로 제한합니다.
+const PLAYBACK_RATES = [1.75, PLAYBACK_RATE, PLAYBACK_RATE, PLAYBACK_RATE, 1.5, 1.5].map(r => Math.min(2, r * 1.3));
 const TOTAL = HOLD * 7 + TRAVEL * 6;
 const stopPosition = i => i * (HOLD + TRAVEL) + HOLD * .62;
 function sample(distance) {
@@ -26,7 +27,7 @@ const scenes = [
   { label:'요소의 레이어', title:'요소 간의 조화를 통해 공간의 온도를 높였습니다.', body:'스톤 패턴의 바닥과 직선적인 우드 텍스처 위에 따뜻한 색온도의 조명을 더해 각 요소를 자연스럽게 연결했습니다.\n서로 다른 소재와 빛이 어우러져 편안하면서도 고급스러운 공간을 완성했습니다.', mbody:'스톤 패턴의 바닥과 직선적인 우드 텍스처 위에\n따뜻한 색온도의 조명을 더해 각 요소를 자연스럽게 연결했습니다.\n서로 다른 소재와 빛이 어우러져 편안하면서도\n고급스러운 공간을 완성했습니다.' },
   { label:'아트월', title:'브랜드를 상징하는 조형을 설계했습니다.', body:'생물장어의 유연한 움직임과 역동성을 부드러운 곡선과 거친 질감의 아트월로 표현했습니다.\n직선적인 공간 속 대비되는 곡선의 조형미를 통해 시선을 끌고, 브랜드를 기억하게 하는 상징적인 포인트를 완성했습니다.', mbody:'생물장어의 유연한 움직임과 역동성을 부드러운 곡선과\n거친 질감의 아트월로 표현했습니다.\n직선적인 공간 속 대비되는 곡선의 조형미를 통해 시선을 끌고\n브랜드를 기억하게 하는 상징적인 포인트를 완성했습니다.' },
   { label:'공간 속 또 하나의 파사드', title:'조리 과정도 하나의 콘텐츠로 설계했습니다.', body:'주방을 오픈형 무대로 구성해 조리 과정을 고객이 직접 보고 즐길 수 있도록 했습니다.\n조리사의 움직임이 하나의 퍼포먼스가 되어 음식에 대한 신뢰와 기대감을 높이는 공간으로 완성했습니다.', mbody:'주방을 오픈형 무대로 구성해 조리 과정을 고객이 직접\n보고 즐길 수 있도록 했습니다.\n조리사의 움직임이 하나의 퍼포먼스가 되어 음식에 대한 신뢰와\n기대감을 높이는 공간으로 완성했습니다.' },
-  { label:'포인트 월', title:'작은 요소도 의도를 갖고 연출했습니다.', body:'익숙한 메뉴판을 브랜드의 개성이 드러나는 대형 간판으로 재해석했습니다.\n우드 소재와 기울어진 입체적 구성을 활용해 시각적인 포인트를 만들고, 조리 공간에도 브랜드의 정체성이 자연스럽게 이어지도록 설계했습니다.', mbody:'익숙한 메뉴판을 브랜드의 개성이 드러나는 대형 간판으로 재해석했습니다.\n우드 소재와 기울어진 입체적 구성을 활용해 시각적인 포인트를 만들고\n조리공간에도 브랜드의 정체성이 자연스럽게 이어지도록 설계했습니다.' },
+  { label:'포인트 월', title:'작은 요소도 의도를 갖고 연출했습니다.', body:'익숙한 메뉴판을 브랜드의 개성이 드러나는 대형 간판으로 재해석했습니다.\n우드 소재와 기울어진 입체적 구성을 활용해 시각적인 포인트를 만들고, 조리 공간에도 브랜드의 정체성이 자연스럽게 이어지도록 설계했습니다.', mbody:'익숙한 메뉴판을 브랜드의 개성이 드러나는\n대형 간판으로 재해석했습니다.\n우드 소재와 기울어진 입체적 구성을 활용해\n시각적인 포인트를 만들고\n조리공간에도 브랜드의 정체성이 자연스럽게\n이어지도록 설계했습니다.' },
 ];
 const $ = s => document.querySelector(s);
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -242,7 +243,21 @@ function resize(){
   if (!coarse || innerWidth !== lastWidth) { vh = innerHeight; lastWidth = innerWidth; }
   $('#journey').style.height=`${(TOTAL+1)*vh}px`;wake();
 }
-addEventListener('scroll',wake,{passive:true});addEventListener('resize',resize);
+addEventListener('scroll',wake,{passive:true});
+// 투어 아래(FROM SPACE TO PROMISE)에서 위로 올릴 때만 브레이크:
+// 빠르게 올리다 투어 7번 장면으로 확 빨려 들어가 영상이 다시 재생되는 것을 막습니다.
+// 첫 위쪽 스크롤은 섹션 맨 위에서 0.9초 멈추고, 그 뒤에 다시 올리면 투어로 들어갑니다. 내릴 때는 그대로.
+let lastScrollY = scrollY, brakeArmed = true, brakeUntil = 0;
+addEventListener('scroll', () => {
+  const y = scrollY, up = y < lastScrollY; lastScrollY = y;
+  if (snapping) return;
+  const boundary = $('#concerns').offsetTop;
+  if (y >= boundary + innerHeight * .5) brakeArmed = true;
+  if (!up || y >= boundary - 1 || y <= at(stopPosition(lastStop)) + 2) return;
+  const now = performance.now();
+  if (brakeArmed) { brakeArmed = false; brakeUntil = now + 900; }
+  if (now < brakeUntil) { scrollTo(0, boundary); lastScrollY = boundary; }
+},{passive:true});addEventListener('resize',resize);
 addEventListener('wheel',onWheel,{passive:false});
 // 터치: 한 번 쓸어내리면 휠 한 칸과 같이 한 단계(히어로 문장 한 줄 · 다음 장면)씩 이동
 let touchY = null, touchFired = false;
@@ -266,6 +281,13 @@ $('.skip-tour').addEventListener('click',event=>{
   clips.forEach(c=>c.video.pause()); playingClip=-1;
   scrollTo(0,$('#concerns').offsetTop);
 });
+// 왼쪽 위 '아그디자인'(상단 메뉴 · 투어 화면): 히어로(첫 화면)로 이동
+document.querySelectorAll('a.brand, a.top-brand').forEach(link => link.addEventListener('click', event => {
+  event.preventDefault();
+  snapToken++; cancelAnimationFrame(snapFrame); snapping = false;
+  clips.forEach(c => c.video.pause()); playingClip = -1;
+  scrollTo(0, 0); setHeroLines(2); heroLock = 0; currentStop = 0; wake();
+}));
 $('.hero-scroll').addEventListener('click',event=>{event.preventDefault();step(true);});
 reduced.addEventListener('change',wake);
 resize();

@@ -27,7 +27,8 @@
   function render() {
     queued = false;
     const rect = track.getBoundingClientRect();
-    active = !motion.matches && innerHeight >= 580;
+    // 스크롤 확대 연출은 끄고, 영상은 화면에 보이면 자동 재생합니다(아래 IntersectionObserver)
+    active = false;
     track.classList.toggle('is-animated', active);
     const p = active ? clamp(-rect.top / Math.max(1,track.offsetHeight-stage.offsetHeight)) : 0;
     // 구간에 들어서면 한 번에 최대 크기로 (전환 애니메이션은 CSS transition)
@@ -55,6 +56,11 @@
   new IntersectionObserver(entries => {
     if (entries.some(e => e.isIntersecting) && video.preload === 'none') { video.preload='metadata'; video.load(); }
   },{rootMargin:'300px'}).observe(track);
+  new IntersectionObserver(entries => {
+    const e = entries[0];
+    if (e.isIntersecting && e.intersectionRatio >= .5 && !document.hidden) video.play().catch(() => { play.hidden = false; });
+    else if (!video.paused) video.pause();
+  }, { threshold: [0, .5, 1] }).observe(film);
   queue();
 })();
 

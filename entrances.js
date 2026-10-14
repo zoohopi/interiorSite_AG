@@ -64,7 +64,7 @@
   // Roadmap video: plays only after a click.
   document.querySelectorAll(".rm-video").forEach(box => {
     const v = box.querySelector("video"), btn = box.querySelector(".rm-play");
-    btn.addEventListener("click", () => { v.controls = true; btn.hidden = true; v.play().catch(() => { btn.hidden = false; }); });
+    if (btn) btn.addEventListener("click", () => { v.controls = true; btn.hidden = true; v.play().catch(() => { btn.hidden = false; }); });
   });
 
   // Roadmap image pairs: switch every 2 seconds.
@@ -99,3 +99,38 @@ if (matchMedia('(hover: none)').matches) {
   document.querySelectorAll('.plan').forEach(card => card.addEventListener('click', () => card.classList.toggle('is-flipped')));
 }
 
+
+// 상단 메뉴: 공간 투어(남산장어 공간을 걷다) 구간에서만 숨기고 나머지 구간에서는 화면 위에 고정
+(() => {
+  const header = document.querySelector('.site-nav');
+  const journey = document.getElementById('journey');
+  if (!header || !journey) return;
+  let queued = false;
+  const update = () => {
+    queued = false;
+    const y = scrollY, top = journey.offsetTop, end = top + journey.offsetHeight - innerHeight;
+    header.classList.toggle('is-hidden', y >= top - 2 && y < end);
+    header.classList.toggle('is-solid', y > 40);
+  };
+  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+  addEventListener('scroll', queue, { passive: true });
+  addEventListener('resize', queue);
+  update();
+})();
+
+// 매출 설계 카드 흐름: 휴대폰에서 손가락으로 누르고 있으면 멈추고, 떼면 다시 흐름
+(() => {
+  const track = document.querySelector('.points-track');
+  if (!track) return;
+  const hold = on => track.classList.toggle('is-held', on);
+  track.addEventListener('touchstart', () => hold(true), { passive: true });
+  ['touchend', 'touchcancel'].forEach(t => track.addEventListener(t, () => hold(false), { passive: true }));
+})();
+
+// 진행 절차 영상(착공): 소리 없이 화면에 보이면 자동 재생, 벗어나면 정지
+document.querySelectorAll('video.rm-autoplay').forEach(v => {
+  v.muted = true;
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting && !document.hidden) v.play().catch(() => {}); else v.pause();
+  }, { threshold: .4 }).observe(v);
+});
