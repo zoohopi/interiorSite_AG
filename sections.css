@@ -637,7 +637,7 @@ html{overflow-x:clip}
   .pay-5 .pay-mark.is-empty:before{content:none}
 }
 /* 리뷰 본문 양쪽 정렬 */
-.rv-text{text-align:center}
+.rv-text{text-align:left}
 @media(max-width:800px){.pay-5 .pay-mark span{width:auto;max-width:none}}
 /* 줄바꿈: br.mo = 휴대폰에서만, br.pc = PC에서만, br.all = 항상 */
 br.mo{display:none}
