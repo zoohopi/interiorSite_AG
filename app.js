@@ -65,8 +65,9 @@ let frame = 0;
 const wake = () => { if(!frame) frame = requestAnimationFrame(render); };
 const clips = ['01-to-02-seedance25-reference-1080p.mp4','02-to-03-4s-seedance25-reference-1080p.mp4','03-to-04-seedance25-reference-1080p.mp4','04-to-05-seedance25-reference-1080p-cut.mp4','05-to-06-seedance25-reference-1080p-ramp-fast.mp4','06-to-07-text-lock-2s-fade.mp4'].map((file, i) => {
   const video = document.createElement('video');
-  // 휴대폰은 동시에 미리 불러올 수 있는 영상 수가 적어 뒤쪽 영상이 재생되지 않았습니다. 앞의 두 개만 미리 받고 나머지는 가까워질 때 받습니다.
-  video.muted = true; video.playsInline = true; video.preload = i < 2 ? 'auto' : 'metadata'; video.setAttribute('aria-hidden','true');
+  // 영상을 H.264로 다시 만들어 6개 합쳐 약 17MB라, 페이지를 열 때 모두 미리 받아 둡니다(늦게 받으면 휴대폰 데이터에서 재생 전에 장면이 지나감).
+  video.muted = true; video.playsInline = true; video.preload = 'auto';
+  video.setAttribute('muted',''); video.setAttribute('playsinline',''); video.setAttribute('webkit-playsinline',''); video.setAttribute('aria-hidden','true');
   $('#media').append(video);
   video.src = `previz-01/outputs/${file}`;
   video.load();
@@ -100,16 +101,12 @@ function animateScroll(to, duration, easing=ease, token=snapToken) {
     snapFrame = requestAnimationFrame(step);
   });
 }
-// 해당 장면 근처의 영상만 미리 받아 둡니다.
-const warm = stop => [stop - 1, stop, stop + 1].forEach(i => {
-  const clip = clips[i];
-  if (clip && clip.video.preload !== 'auto') { clip.video.preload = 'auto'; clip.video.load(); }
-});
-// 아직 준비되지 않은 영상은 재생 전에 잠깐(최대 1.5초) 기다립니다.
-const ensureReady = clip => clip.video.readyState >= 2 ? Promise.resolve() : new Promise(resolve => {
-  if (clip.video.preload !== 'auto') { clip.video.preload = 'auto'; clip.video.load(); }
-  clip.video.addEventListener('loadeddata', resolve, { once: true });
-  setTimeout(resolve, 400);
+// 영상이 재생할 만큼 받아지지 않았으면 재생 전에 최대 2.5초 기다립니다(load()는 받던 데이터를 버리므로 부르지 않음).
+const ensureReady = clip => clip.video.readyState >= 3 ? Promise.resolve() : new Promise(resolve => {
+  clip.video.preload = 'auto';
+  clip.video.addEventListener('canplay', resolve, { once: true });
+  clip.video.addEventListener('error', resolve, { once: true });
+  setTimeout(resolve, 2500);
 });
 // The tour starts below the hero, so timeline distances are offset by the journey's top.
 const journeyTop = () => $('#journey').offsetTop;
@@ -161,7 +158,7 @@ async function moveToStop(index, duration) {
       currentStop = i+direction;
     }
   }
-  currentStop = index; snapping = false; warm(index); wake();
+  currentStop = index; snapping = false; wake();
 }
 // Below the last stop the page scrolls natively into the sections that follow the tour.
 const lastStop = scenes.length - 1;
@@ -258,13 +255,7 @@ addEventListener('touchmove',event=>{
   if (!touchFired && Math.abs(dy) > 24) { touchFired = true; step(dy > 0); }
 },{passive:false});
 addEventListener('touchend',()=>{ touchY = null; },{passive:true});
-// 일부 안드로이드(절전 모드 등)는 사용자 터치 없이 영상 재생을 막습니다. 첫 터치 때 투어 영상을 한 번씩 재생·정지해 재생 권한을 받아 둡니다.
-let clipsUnlocked = false;
-const unlockClips = () => {
-  if (clipsUnlocked) return; clipsUnlocked = true;
-  clips.forEach((c, i) => { if (!c.video.paused) return; const p = c.video.play(); if (p) p.then(()=>{ if (playingClip !== i) c.video.pause(); }).catch(()=>{}); });
-};
-['touchend','click','keydown'].forEach(t => addEventListener(t, unlockClips, { passive: true }));
+
 addEventListener('keydown',event=>{
   if(['ArrowDown','PageDown',' '].includes(event.key)&&tourHandles(true)){event.preventDefault();step(true);}
   if(['ArrowUp','PageUp'].includes(event.key)&&tourHandles(false)){event.preventDefault();step(false);}
@@ -278,4 +269,4 @@ $('.skip-tour').addEventListener('click',event=>{
 $('.hero-scroll').addEventListener('click',event=>{event.preventDefault();step(true);});
 reduced.addEventListener('change',wake);
 resize();
-requestAnimationFrame(()=>{ currentStop = nearestStop(); warm(currentStop); wake(); });
+requestAnimationFrame(()=>{ currentStop = nearestStop(); wake(); });

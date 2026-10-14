@@ -99,16 +99,3 @@ if (matchMedia('(hover: none)').matches) {
   document.querySelectorAll('.plan').forEach(card => card.addEventListener('click', () => card.classList.toggle('is-flipped')));
 }
 
-// 앱 안 브라우저(카카오톡 등)는 사용자 동작 없이 영상을 재생하지 못합니다.
-// 첫 터치 때 채팅 영상 등 나머지 영상을 한 번씩 재생·정지해 두면 이후 스크롤로 재생할 수 있습니다.
-(() => {
-  const unlock = () => {
-    ['touchend','click','keydown'].forEach(t => removeEventListener(t, unlock));
-    document.querySelectorAll('video').forEach(v => {
-      if (!v.paused || v.id === 'hero-video' || v.closest('#media')) return;
-      const p = v.play();
-      if (p) p.then(() => v.pause()).catch(() => {});
-    });
-  };
-  ['touchend','click','keydown'].forEach(t => addEventListener(t, unlock, { passive: true }));
-})();
